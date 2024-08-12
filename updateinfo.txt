@@ -1,1 +1,1 @@
-bootstrap.min.css.gz;index.html;chart.js;bootstrap.bundle.js.gz;
+bootstrap.min.css.gz;index.html;chart.js;bootstrap.bundle.js.gz;guage.js;
