@@ -229,9 +229,8 @@
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Admin Mode</label>				
 				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Admin password" aria-label="Recipient's username with two button addons">
-				  <button class="btn btn-danger" type="button">Enable</button>
-				  <button class="btn btn-success" type="button">Disable</button>
+				  <input type="password" class="form-control" id="idAdminPassword" placeholder="Admin password" aria-label="Recipient's username with two button addons">
+				  <button class="btn btn-danger" type="button" onclick="FuncEnableAdminMode()">Enable</button>				  
 				</div>	
 				<div id="emailHelp" class="form-text">When admin mode is enabled you will be able to perform administrator related tasks on this SolarNode entity. Please remember to disable admin mode when done. Tip: Rebooting this device will revert back to non admin mode.</div>
 			  
