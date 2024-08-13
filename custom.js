@@ -17,3 +17,23 @@ xhr.onload = () => {
 	
   }
 };
+
+function FuncDisableAdminMode(){
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "api/enableadmin");
+xhr.send();
+xhr.responseType = "text";
+xhr.onload = () => {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    console.log(xhr.response);
+	//alert(xhr.response);
+	if(xhr.response=="Admin mode disabled (Note: system is now secure until you enable admin mode."){			
+			document.getElementById("idAdminModestatus").style.visibility = "hidden"; 
+	}
+	
+  } else {
+    console.log(`Error: ${xhr.status}`);
+	
+  }
+};
+}
