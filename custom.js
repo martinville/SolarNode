@@ -63,6 +63,7 @@ function FuncEnableAdminMode(){
 function FuncUpdateSystem(){	
 	alert("System will now update in the background. You will receive a notification once the update is complete.");
 	document.getElementById("idSystemUpdating").style.visibility = "visible";
+	document.getElementById("idSystemUpdating").style.display = "block";
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/updatesystem");
 	xhr.send();
@@ -72,6 +73,7 @@ function FuncUpdateSystem(){
 		console.log(xhr.response);		
 		alert(xhr.response);
 		document.getElementById("idSystemUpdating").style.visibility = "hidden";
+		document.getElementById("idSystemUpdating").style.display = "none";
 	  } else {
 		console.log(`Error: ${xhr.status}`);
 		
