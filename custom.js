@@ -57,6 +57,7 @@ function FuncEnableAdminMode(){
 	  }
 	};
 	document.getElementById("idAdminPassword").value="";
+	FuncGetAdminMode();
 }
 
 function FuncUpdateSystem(){	
