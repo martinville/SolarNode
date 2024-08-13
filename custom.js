@@ -37,7 +37,7 @@ function FuncDisableAdminMode(){
 	  }
 	};
 }
-function FuncEnableAdminMode{	
+function FuncEnableAdminMode(){	
 	var parmPassword=document.getElementById("idAdminPassword").value;
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/enableadmin?adminpass=" + parmPassword);
