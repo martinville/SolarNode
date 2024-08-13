@@ -1,3 +1,6 @@
+FuncGetAdminMode();
+
+function FuncGetAdminMode(){
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "api/getadminmode");
 xhr.send();
@@ -16,7 +19,9 @@ xhr.onload = () => {
     console.log(`Error: ${xhr.status}`);
 	
   }
-};
+};	
+}
+
 
 function FuncDisableAdminMode(){
 	const xhr = new XMLHttpRequest();
@@ -47,11 +52,8 @@ function FuncEnableAdminMode(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		console.log(xhr.response);		
 		alert(xhr.response);
-		if(xhr.response=="Admin mode enabled (Note: system is now vulnrable until you exit admin mode.")
-			{document.getElementById("idAdminModestatus").style.visibility = "visible";}else{document.getElementById("idAdminModestatus").style.visibility = "hidden";}
 	  } else {
-		console.log(`Error: ${xhr.status}`);
-		
+		console.log(`Error: ${xhr.status}`);		
 	  }
 	};
 	document.getElementById("idAdminPassword").value="";
