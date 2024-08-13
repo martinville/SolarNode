@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link href="bootstrap.min.css.gz" rel="stylesheet" >
-<link rel="stylesheet" type="text/css" href="guage.css">
+<link href="http://192.168.1.131/bootstrap.min.css.gz" rel="stylesheet" >
+
 <style>
 
 </style>
@@ -69,11 +69,11 @@
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-12" style="margin-top:10px;">
+			<div class="col-sm-12" style="margin-top:10px;visibility:hidden;" id="idAdminModestatus">
 				<div class="card bg-danger text-light">
 				  <div class="card-body">					
 					<button type="button" class="btn btn-sm btn-dark float-end">Disable</button>
-					<small>Admin mode is currently enabled.</small>
+					<small id="">Admin mode is currently enabled.</small>
 				  </div>
 				</div>
 			</div>			
@@ -247,9 +247,8 @@
 
 
 
-
-<script src="bootstrap.bundle.js.gz"></script>
-
+<script src="custom.js"></script>
+<script src="bootstrap.bundle.js"></script>
 <script src="guage.js"></script>
 
 <script>
@@ -443,6 +442,8 @@ new Chart("myChart", {
   }
 });
 </script>
+
+
 </body>
 </html>
 
