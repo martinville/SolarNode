@@ -11,8 +11,10 @@ xhr.onload = () => {
 	//alert(xhr.response);
 	if(xhr.response=="Admin mode enabled (Note: system is now vulnrable until you exit admin mode."){			
 			document.getElementById("idAdminModestatus").style.visibility = "visible"; 
+			document.getElementById("idAdminModestatus").style.display = "block";
 	}else{			
 			document.getElementById("idAdminModestatus").style.visibility = "hidden"; 
+			document.getElementById("idAdminModestatus").style.display = "none";
 	}
 	
   } else {
@@ -34,6 +36,7 @@ function FuncDisableAdminMode(){
 		//alert(xhr.response);
 		if(xhr.response=="Admin mode disabled (Note: system is now secure until you enable admin mode."){			
 				document.getElementById("idAdminModestatus").style.visibility = "hidden"; 
+				document.getElementById("idAdminModestatus").style.display = "none";
 		}
 		
 	  } else {
