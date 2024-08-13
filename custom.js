@@ -48,7 +48,7 @@ function FuncEnableAdminMode(){
 		console.log(xhr.response);		
 		alert(xhr.response);
 		if(xhr.response=="Admin mode enabled (Note: system is now vulnrable until you exit admin mode.")
-			{document.getElementById("idAdminModestatus").style.visibility = "visible";}		
+			{document.getElementById("idAdminModestatus").style.visibility = "visible";}else{document.getElementById("idAdminModestatus").style.visibility = "hidden";}
 	  } else {
 		console.log(`Error: ${xhr.status}`);
 		
