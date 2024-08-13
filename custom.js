@@ -45,10 +45,10 @@ function FuncEnableAdminMode(){
 	xhr.responseType = "text";
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
-		console.log(xhr.response);
-		document.getElementById("idAdminModestatus").style.visibility = "hidden";
+		console.log(xhr.response);		
 		alert(xhr.response);
-		
+		if(xhr.response=="Admin mode enabled (Note: system is now vulnrable until you exit admin mode.")
+			{document.getElementById("idAdminModestatus").style.visibility = "visible";}		
 	  } else {
 		console.log(`Error: ${xhr.status}`);
 		
