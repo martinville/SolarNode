@@ -61,7 +61,7 @@ function FuncUpdateSystem(){
 	alert("System will now update in the background. You will receive a notification once the update is complete.");
 	document.getElementById("idSystemUpdating").style.visibility = "visible";
 	const xhr = new XMLHttpRequest();
-	xhr.open("GET", "api/updatesystem" + parmPassword);
+	xhr.open("GET", "api/updatesystem");
 	xhr.send();
 	xhr.responseType = "text";
 	xhr.onload = () => {
