@@ -34,7 +34,7 @@
 						<li><a class="dropdown-item" href="#"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="30px;"> Home Assistant Integration</a></li>										
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="#">Device Information</a></li>
-						<li><a class="dropdown-item" href="#">Update System</a></li>
+						<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update System</a></li>
 						<li><a class="dropdown-item" href="#">Reboot System</a></li>
 					  </ul>
 					</li>
@@ -76,7 +76,17 @@
 					<small id="">Admin mode is currently enabled.</small>
 				  </div>
 				</div>
-			</div>			
+			</div>
+			<div class="col-sm-12" style="margin-top:10px;visibility:hidden;" id="idSystemUpdating">
+				<div class="card bg-dark text-light">
+				  <div class="card-body">					
+						<div class="spinner-border text-warning float-end" role="status">
+						  <span class="sr-only">Loading...</span>
+						</div>
+					<small id="">Admin mode is currently enabled.</small>
+				  </div>
+				</div>
+			</div>				
 			
 		</div>
 	</div>
@@ -230,7 +240,7 @@
 				<label for="exampleFormControlInput1" class="form-label">Admin Mode</label>				
 				<div class="input-group">
 				  <input type="password" class="form-control" id="idAdminPassword" placeholder="Admin password" aria-label="Recipient's username with two button addons">
-				  <button class="btn btn-danger" type="button" onclick="FuncEnableAdminMode()">Enable</button>				  
+				  <button class="btn btn-danger" type="button" onclick="FuncEnableAdminMode()" data-bs-dismiss="modal">Enable</button>				  
 				</div>	
 				<div id="emailHelp" class="form-text">When admin mode is enabled you will be able to perform administrator related tasks on this SolarNode entity. Please remember to disable admin mode when done. Tip: Rebooting this device will revert back to non admin mode.</div>
 			  

@@ -46,7 +46,29 @@ function FuncEnableAdminMode(){
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		console.log(xhr.response);
-		alert(xhr.response);								
+		document.getElementById("idAdminModestatus").style.visibility = "hidden";
+		alert(xhr.response);
+		
+	  } else {
+		console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};
+	document.getElementById("idAdminPassword").value="";
+}
+
+function FuncUpdateSystem(){	
+	alert("System will now update in the background. You will receive a notification once the update is complete.");
+	document.getElementById("idSystemUpdating").style.visibility = "visible";
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/updatesystem" + parmPassword);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		console.log(xhr.response);		
+		alert(xhr.response);
+		document.getElementById("idSystemUpdating").style.visibility = "hidden";
 	  } else {
 		console.log(`Error: ${xhr.status}`);
 		
