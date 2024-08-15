@@ -33,8 +33,7 @@
 						<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalSunsynkAccount"><img src="sunsynk.png" alt="Bootstrap" class="img-fluid" width="30px;" > SunSynk Account</a></li>
 						<li><a class="dropdown-item" href="#"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="30px;"> Home Assistant Integration</a></li>										
 						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="#">Device Information</a></li>
-						<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update System</a></li>
+						<li><a class="dropdown-item" href="#">Device Information</a></li>						
 						<li><a class="dropdown-item" href="#">Reboot System</a></li>
 					  </ul>
 					</li>
@@ -240,11 +239,17 @@
 				<label for="exampleFormControlInput1" class="form-label">Admin Mode</label>				
 				<div class="input-group">
 				  <input type="password" class="form-control" id="idAdminPassword" placeholder="Admin password" aria-label="Recipient's username with two button addons">
-				  <button class="btn btn-danger" type="button" onclick="FuncEnableAdminMode()" data-bs-dismiss="modal">Enable</button>				  
+				  <button class="btn btn-danger" type="button" onclick="FuncEnableAdminMode()" >Enable</button>				  
 				</div>	
 				<div id="emailHelp" class="form-text">When admin mode is enabled you will be able to perform administrator related tasks on this SolarNode entity. Please remember to disable admin mode when done. Tip: Rebooting this device will revert back to non admin mode.</div>
 			  
-			</div>			
+			</div>
+			<div class="mb-3">			  
+				<div class="input-group">
+					<a class="btn col-12 btn-dark" href="#" onclick="FuncUpdateSystem()">Update UI</a>
+				</div>
+				<div id="emailHelp" class="form-text">Note: Update UI will only update this device's graphical user interface. The OS will not be updated.</div>
+			</div>				
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
