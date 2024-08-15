@@ -1,1 +1,1 @@
-bootstrap.min.css.gz;index.html;chart.js;bootstrap.bundle.js.gz;guage.js;custom.js;battery.png;homeassistant.png;logo.png;micro-sd-card.png;power.png;server.png;solar-inverter.png;solar-plant.png;solarnodeicon.png;solarpanel.png;sunsynk.png;
+bootstrap.min.css.gz;index.html;chart.js;bootstrap.bundle.js.gz;guage.js;custom.js;battery.png;homeassistant.png;logo.png;micro-sd-card.png;power.png;server.png;solarinverter.png;solarplant.png;solarnodeicon.png;solarpanel.png;sunsynk.png;
