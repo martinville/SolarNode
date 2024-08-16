@@ -33,7 +33,7 @@
 						<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalSunsynkAccount"><img src="sunsynk.png" alt="Bootstrap" class="img-fluid" width="30px;" > SunSynk Account</a></li>
 						<li><a class="dropdown-item" href="#"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="30px;"> Home Assistant Integration</a></li>										
 						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="#">Device Information</a></li>						
+						<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#ModalSystemInformation">Device Information</a></li>						
 						<li><a class="dropdown-item" href="#">Reboot System</a></li>
 					  </ul>
 					</li>
@@ -55,7 +55,7 @@
 			<div class="col-sm-12" style="margin-top:10px;">
 				<div class="card bg-dark text-light">
 				  <div class="card-body">
-					<span class="float-end">10:10:10s</span>
+					<span class="float-end" id="idUpTime">--:--:--</span>
 					<img src="server.png" alt="Bootstrap" class="img-fluid" width="30px;"> <small>Server Up Time</small>
 				  </div>
 				</div>
@@ -63,7 +63,7 @@
 			<div class="col-sm-12" style="margin-top:10px;">
 				<div class="card bg-dark text-light">
 				  <div class="card-body">
-					<span class="float-end">345kb</span>
+					<span class="float-end" id="idDiskInfo">---</span>
 					<img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> <small>Internal Storage</small>
 				  </div>
 				</div>
@@ -259,7 +259,44 @@
   </div>
 </div>
 
+<!-- SolarNodeDevice Info Modal -->
+<div class="modal fade " id="ModalSystemInformation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><img src="logo.png" alt="Bootstrap" class="img-fluid" ></h1>
+		
+		
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		<h5>Device Information</h5>
+		<table class="table table-striped table-dark">
+		  <tbody>			
+			<tr><td>Chip Model</td><td id="idchipmodel"></td></tr>
+			<tr><td>Mac Address</td><td id="idmacaddr"></td></tr>
+			<tr><td>CPU Temp</td><td id="idcputemp"></td></tr>
+			<tr><td>CPU Count</td><td id="idcpucount"></td></tr>
+			<tr><td>CPU Frequency</td><td id="idcpufreq"></td></tr>			
+			<tr><td>Up Time</td><td id="Uptime"></td></tr>			
+			<tr><td>Chip Capacity</td><td id="idchipcapacity"></td></tr>
+			<tr><td>Sketch Capacity</td><td id="idsketchcapacity"></td></tr>
+			<tr><td>Sketch Free Space</td><td id="idsketchfreecapacity"></td></tr>
+			<tr><td>Flash space Used</td><td id="idspaceused"></td></tr>			
 
+			
+			
+			
+		  </tbody>
+		</table>
+	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>        
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="custom.js"></script>
 <script src="bootstrap.bundle.js"></script>
