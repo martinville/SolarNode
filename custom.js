@@ -109,7 +109,7 @@ function FuncGetSystemInfo(){
 		document.getElementById("idchipcapacity").innerHTML = obj_SysInfo.chipcapacity;
 		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity;
 		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity;
-		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused;
+		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + "kb";
 			
 		
 	  } else {
