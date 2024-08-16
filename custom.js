@@ -1,5 +1,6 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
+FuncGetFileList();
 
 function FuncGetAdminMode(){
 	const xhr = new XMLHttpRequest();
@@ -97,7 +98,7 @@ function FuncGetSystemInfo(){
 		//console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(obj_SysInfo.chipmodel);
-		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + "kb / " + obj_SysInfo.chipcapacity + "kb";
+		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + " kb / " + obj_SysInfo.chipcapacity + " kb";
 		document.getElementById("idUpTime").innerHTML = obj_SysInfo.Uptime;
 		//Modal values
 		document.getElementById("idchipmodel").innerHTML = obj_SysInfo.chipmodel;
@@ -109,8 +110,26 @@ function FuncGetSystemInfo(){
 		document.getElementById("idchipcapacity").innerHTML = obj_SysInfo.chipcapacity;
 		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity;
 		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity;
-		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + "kb";
+		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + " kb";
 			
+		
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+}
+
+function FuncGetFileList(){
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/listfiles");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		//alert(xhr.response);
+		document.getElementById("idFiles").innerHTML = xhr.response;
 		
 	  } else {
 		//console.log(`Error: ${xhr.status}`);
