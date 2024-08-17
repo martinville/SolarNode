@@ -138,18 +138,18 @@ function FuncGetFileList(){
 	xhr.responseType = "text";
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
-		//console.log(xhr.response);
+		console.log(xhr.response);
 		//alert(xhr.response);
 		document.getElementById("idFiles").innerHTML = xhr.response;
 		
 	  } else {
-		//console.log(`Error: ${xhr.status}`);
+		console.log(`Error: ${xhr.status}`);
 		
 	  }
 	};	
 	
 
-	const xhr = new XMLHttpRequest(); //already declared	
+	const xhr2 = new XMLHttpRequest(); //already declared	
 	xhr2.open("GET", "api/listgithubfiles");
 	xhr2.send();
 	xhr2.responseType = "text";
