@@ -149,25 +149,24 @@ function FuncGetFileList(){
 	};	
 	
 
-	//const xhr = new XMLHttpRequest(); //already declared
-	
-	xhr.open("GET", "api/listgithubfiles");
-	xhr.send();
-	xhr.responseType = "text";
-	xhr.onload = () => {
-	  if (xhr.readyState == 4 && xhr.status == 200) {
+	const xhr = new XMLHttpRequest(); //already declared	
+	xhr2.open("GET", "api/listgithubfiles");
+	xhr2.send();
+	xhr2.responseType = "text";
+	xhr2.onload = () => {
+	  if (xhr2.readyState == 4 && xhr2.status == 200) {
 		
-			var FileList=xhr.response;
+			var FileList=xhr2.response;
 			var File = FileList.split(";");
 			var BuildGitHubTable="";
 				for (let i = 0; i < File.length -1 ; i++) {
 					//alert(File[i]);
-					BuildGitHubTable = BuildGitHubTable  + "<tr><td>" + "<img src=\"micro-sd-card.png\" alt=\"\" class=\"img-fluid\" width=\"30px;\">" + File[i] + "</td><td><a class=\"btn btn-sm btn-danger\" href=\"#api/deletefile?filename=" + File[i] + "\" role=\"button\">Delete</a> <a class=\"btn btn-sm btn-success\" href=\"api/downloadfile?filename=" + File[i] + "\" role=\"button\">Re-Download</a></td></tr>";
+					BuildGitHubTable = BuildGitHubTable  + "<tr><td>" + "<img src=\"micro-sd-card.png\" alt=\"\" class=\"img-fluid\" width=\"30px;\">" + File[i] + "</td><td> <a class=\"btn btn-sm btn-success\" href=\"api/downloadfile?filename=" + File[i] + "\" role=\"button\">Download</a></td></tr>";
 				} 		
 			document.getElementById("idGitHubFiles").innerHTML = BuildGitHubTable;		
 		
 	  } else {
-		//console.log(`Error: ${xhr.status}`);
+		console.log(`Error: ${xhr2.status}`);
 		
 	  }
 	};	
