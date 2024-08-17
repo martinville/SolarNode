@@ -151,7 +151,7 @@ function FuncGetFileList(){
 
 	//const xhr = new XMLHttpRequest(); //already declared
 	
-	xhr.open("GET", "api/listguthubfiles");
+	xhr.open("GET", "api/listgithubfiles");
 	xhr.send();
 	xhr.responseType = "text";
 	xhr.onload = () => {
