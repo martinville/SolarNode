@@ -1,7 +1,7 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
-FuncHideFilemanager();
+//FuncHideFilemanager();
 
 function FuncShowFilemanager(){
 	FuncGetFileList();
@@ -161,7 +161,7 @@ function FuncGetFileList(){
 			var BuildGitHubTable="";
 				for (let i = 0; i < File.length -1 ; i++) {
 					//alert(File[i]);
-					BuildGitHubTable = BuildGitHubTable  + "<tr><td>" + "<img src=\"micro-sd-card.png\" alt=\"\" class=\"img-fluid\" width=\"30px;\">" + File[i] + "</td><td> <a class=\"btn btn-sm btn-success\" href=\"api/downloadfile?filename=" + File[i] + "\" role=\"button\">Download</a></td></tr>";
+					BuildGitHubTable = BuildGitHubTable  + "<tr><td>" + "<img src=\"micro-sd-card.png\" alt=\"\" class=\"img-fluid\" width=\"30px;\">" + File[i] + "</td><td> <a target=\"_blank\" class=\"btn btn-sm btn-success\" href=\"api/downloadfile?filename=" + File[i] + "\" role=\"button\">Download</a></td></tr>";
 				} 		
 			document.getElementById("idGitHubFiles").innerHTML = BuildGitHubTable;		
 		
