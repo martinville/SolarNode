@@ -1,6 +1,17 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
+FuncHideFilemanager();
+
+function FuncShowFilemanager(){
+	FuncGetFileList();
+	document.getElementById("idFileManager").style.visibility = "visible"; 
+	document.getElementById("idFileManager").style.display = "block";	
+}
+function FuncHideFilemanager(){	
+	document.getElementById("idFileManager").style.visibility = "hidden"; 
+	document.getElementById("idFileManager").style.display = "none";	
+}
 
 function FuncGetAdminMode(){
 	const xhr = new XMLHttpRequest();
