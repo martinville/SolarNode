@@ -1,7 +1,7 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
-//FuncHideFilemanager();
+FuncHideFilemanager();
 
 function FuncShowFilemanager(){
 	FuncGetFileList();
