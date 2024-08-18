@@ -241,23 +241,25 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"><img src="sunsynk.png" alt="" class="img-fluid" width="40px;" > SunSynk Account</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <form action="api/savesunsynk" method="POST">
+	  <div class="modal-body">
 			<div class="mb-3">
 			  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-			  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="youremail@domain.com">
+			  <input type="email" name="fSunSynkEmail" class="form-control" id="exampleFormControlInput1" placeholder="youremail@domain.com">
 			</div>
 			<div class="mb-3">
 			  <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-			  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Sunsynk Password">
+			  <input type="password" name="fSunSynkPass" class="form-control" id="exampleFormControlInput1" placeholder="Sunsynk Password">
 			</div>
 			<div class="mb-3">
 			  <label for="exampleFormControlTextarea1" class="form-label">Inverter Serial Number</label>
-			  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Inverter Serial Number">
+			  <input type="text" name="fSunSynkSerial" class="form-control" id="exampleFormControlInput1" placeholder="Inverter Serial Number">
 			</div>			
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-dark">Save changes</button>
+        <button type="submit" class="btn btn-dark" data-bs-dismiss="modal">Save changes</button>
+		</form>
       </div>
     </div>
   </div>
