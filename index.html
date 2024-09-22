@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<link href="bootstrap.min.css" rel="stylesheet" >
+
+<style>
+
+</style>
+
+<body style="background-color:#1B1B1F;">
+
+<div class="container">
+	<br>
+				<nav class="navbar navbar-dark bg-dark text-light">
+				  <div class="container-fluid">
+					<a class="navbar-brand" href="#"><img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"></a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+						  <a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Home Assistant Integration</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" aria-current="page" href="#">About SolarNode</a>
+						</li>						
+
+					  </ul>
+					</div>
+				  </div>
+				</nav>
+
+			<div class="row">
+				<div class="col-sm-3" style="margin-top:10px;">
+							  <div class="card card-body bg-dark text-light">
+								<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>								
+									<table class="table table-sm table-borderless table-dark">
+										<tbody>			
+										<tr><td>Inverter Model</td><td id="idchipmodel"></td></tr>
+										<tr><td>Inverter Serial</td><td id="idchipmodel"></td></tr>
+										<tr><td>Phase</td><td id="idchipmodel"></td></tr>
+										<tr><td>Serial COM</td><td id="idchipmodel"><span style="color:#55B56A;">Connected</span></td></tr>
+										</tbody>
+									</table>
+							  </div>
+							  
+				</div>
+				<div class="col-sm-9" style="margin-top:10px;">			
+					<div class="card bg-dark text-light">
+					  <div class="card-body">
+							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideDeviceInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
+							<h6><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"> Device Information</h6>						
+							<div class="collapse" id="ShowHideDeviceInfo">
+							  <br>
+							  <div class="card card-body bg-dark text-light">
+									<table class="table table-sm table-striped table-dark">
+										<tbody>			
+										<tr><td>Chip Model</td><td id="idchipmodel"></td></tr>
+										<tr><td>Mac Address</td><td id="idmacaddr"></td></tr>
+										<tr><td>CPU Temp</td><td id="idcputemp"></td></tr>
+										<tr><td>CPU Count</td><td id="idcpucount"></td></tr>
+										<tr><td>CPU Frequency</td><td id="idcpufreq"></td></tr>			
+										<tr><td>Up Time</td><td id="Uptime"></td></tr>			
+										<tr><td>Chip Capacity</td><td id="idchipcapacity"></td></tr>
+										<tr><td>Sketch Capacity</td><td id="idsketchcapacity"></td></tr>
+										<tr><td>Sketch Free Space</td><td id="idsketchfreecapacity"></td></tr>			
+										<tr><td>Flash space Used</td><td id="idspaceused"></td></tr>
+										<tr><td>Storage Info</td><td id="idDiskInfo"></td></tr>
+										<tr><td>Up Time</td><td id="idUpTime"></td></tr>								
+										</tbody>
+									</table>								
+							  </div>
+							</div>	
+					  </div>
+					</div>						
+					<div class="card bg-dark text-light">
+					  <div class="card-body">
+							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideSystemEndpoints" role="button" aria-expanded="false" aria-controls="ShowHideSystemEndpoints">Show</a>
+							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> System Endpoints</h6>						
+							<div class="collapse" id="ShowHideSystemEndpoints">
+							  
+								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
+								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
+								  <button type="button" class="btn btn-light btn-sm float-end">Download</button>
+								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
+								  <button type="button" class="btn btn-light btn-sm float-end">Refresh</button>
+								  
+								  <span class="form-text text-light">List of configured endpoints.</span>
+								  <br>
+								  <br>
+								  <div class="card card-body bg-dark text-light">
+									
+									<table class="table table-sm table-striped table-dark">
+										<tbody>			
+										<tr><td><b>#ID</td><td><b>Name</td><td><b class="float-end"></td></tr>
+										<tr><td><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> 1</td><td>Battery SOC</td><td><button type="button" class="btn btn-dark btn-sm float-end">Delete</button> <span class="float-end" style="display:block;visibility: hidden;">|</span> <button type="button" class="btn btn-dark btn-sm float-end">Edit</button></td></tr>
+
+										</tbody>
+									</table>
+									<br>
+									<button type="button" class="btn btn-light btn-sm float-end">Refresh</button>
+								  </div>
+								  <br>
+							  
+							</div>	
+					  </div>
+					</div>
+					<div class="card bg-dark text-light">
+					  <div class="card-body">
+							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideFilesystemInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
+							<h6><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File System Information</h6>						
+							<div class="collapse" id="ShowHideFilesystemInfo">
+							  <br>
+							  <div class="card card-body bg-dark text-light">
+								<table class="table table-sm table-striped table-dark" id="idFiles" >
+								</table>
+							  </div>
+							</div>	
+					  </div>
+					</div>					
+				</div>
+			</div>
+<br><br><br>
+</div>
+
+<!-- Create New Endpoint -->
+<!-- Modal -->
+<div class="modal fade" id="CreateEndPoint" tabindex="-1" aria-labelledby="CreateEndPoint" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CreateEndPoint"><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="50px;"> Create New Endpoint</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+			<form>
+			  <div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Address ID</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text">See the Synsynk MODBUS Documentation for more information on address and IDs</div>
+			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Address ID Firendly Name</label>
+				<input type="text" class="form-control" id="exampleInputPassword1">
+				<label class="form-label">Address ID System Name</label>
+				<input type="text" class="form-control" disabled id="exampleInputPassword1">				
+			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Unit Of Measurment</label>
+					<select class="form-select" aria-label="Default select example">
+					  <option value="">None</option>
+					  <option value="%">%</option>
+					  <option value="°C">Temperature (C)</option>					  
+					  <option value="V">Voltage (V)</option>
+					  <option value="A">Current (A)</option>
+					  <option value="W">Watts (W)</option>
+					  <option value="kWh">Killo Watt Hour (kWh)</option>
+					  <option value="Ah">Amp Hour (Ah)</option>					  
+
+					</select>
+			  </div>
+			  <div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Factor Formula</label>
+				<input type="text" class="form-control" value="0" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it as 0 if you don't want to add a calculation.</div>
+			  </div>			  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		<button type="submit" class="btn btn-sm btn-dark">Save</button>
+		</form>		
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Setup HA Config -->
+<!-- Modal -->
+<div class="modal fade" id="SetupHA" tabindex="-1" aria-labelledby="SetupHA" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="50px;"> Setup Home Assistant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <p><i>Note: For security reasons, previously saved settings will not be populated in the below form.</i></p>
+	  
+			<form>
+			  <div class="mb-3">
+				<label class="form-label">Home Assistant Server IP Address</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">				
+			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Home Assistant Port</label>
+				<input type="text" class="form-control" id="exampleInputPassword1">				
+			  </div>
+			  <div class="mb-3">
+				<label class="form-label">HTTP Connection Type</label>
+					<select class="form-select" aria-label="Default select example">
+					  <option value="http">http</option>
+					  <option value="https">https</option>
+					</select>
+			  </div>
+			  <div class="mb-3">
+			  <div class="mb-3">
+				<label class="form-label">Home Assistant Long Live Token</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">				
+			  </div>
+			  </div>				  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		<button type="submit" class="btn btn-sm btn-dark">Save</button>
+		</form>		
+      </div>
+    </div>
+  </div>
+</div>	
+
+
+<script src="custom.js"></script>
+<script src="bootstrap.bundle.js"></script>
+
+
+</body>
+</html>
+
+
