@@ -1,4 +1,4 @@
-//FuncGetAdminMode();
+FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
 //FuncHideFilemanager();
@@ -175,4 +175,27 @@ function FuncGetFileList(){
 	};	
 	*/
 	
+}
+
+function FuncSaveHASettings(){
+		var fHAIP=document.getElementById("fHAIP").value;
+		var fHAPort=document.getElementById("fHAPort").value;
+		var fHAHTTP=document.getElementById("fHAHTTP").value;
+		var fToken=document.getElementById("fToken").value;
+		
+		//Build Parameters
+		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken;
+		alert(ParmsToSend);
+		
+		var http = new XMLHttpRequest();
+		var url = '/savehssettings';						
+		http.open('POST', url, true);
+		http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if(http.readyState == 4 && http.status == 200) {
+				alert(http.responseText);
+			}
+		}
+		http.send(ParmsToSend);		
 }
