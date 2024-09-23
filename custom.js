@@ -185,10 +185,11 @@ function FuncSaveHASettings(){
 		
 		//Build Parameters
 		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken;
-		alert(ParmsToSend);
+		
 		
 		const xhr = new XMLHttpRequest();
-		xhr.open("GET", "api/savehssettings?" + ParmsToSend );		
+		xhr.open("GET", "api/savehssettings?" + ParmsToSend );	
+		alert("api/savehssettings?" + ParmsToSend );		
 		xhr.send();
 		xhr.responseType = "text";
 		xhr.onload = () => {
