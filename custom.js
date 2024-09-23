@@ -242,3 +242,21 @@ function GetHASettings(){
 	  }
 	};
 }
+
+function RebootDevice(){
+
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/reboot");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		alert(xhr.response);
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+	
+}
