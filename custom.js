@@ -213,7 +213,7 @@ function FuncSaveHASettings(){
 }
 
 function GetHASettings(){
-	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}
+	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}	
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "haconfig.json");
 	xhr.send();
@@ -227,10 +227,12 @@ function GetHASettings(){
 		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
 			alert(xhr.response);
 		}else{
-		document.getElementById("fHAIP").innerHTML = obj_SysInfo.HAIP;
-		document.getElementById("fHAPort").innerHTML = obj_SysInfo.HAPort;
-		document.getElementById("fHAHTTP").innerHTML = obj_SysInfo.HAHTTP;
-		document.getElementById("fToken").innerHTML = obj_SysInfo.HALongToken;
+
+		document.getElementById("fHAIP").value = obj_SysInfo.HAIP;
+		document.getElementById("fHAPort").value = obj_SysInfo.HAPort;
+		document.getElementById("fHAHTTP").value = obj_SysInfo.HAHTTP;
+		document.getElementById("fToken").value = obj_SysInfo.HALongToken;
+		//alert("HA Settings Fetched");
 		}
 				
 	  } else {
