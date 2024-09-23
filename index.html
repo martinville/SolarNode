@@ -22,6 +22,16 @@
 						<li class="nav-item">
 						  <a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
+					   <li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							System Settings
+						  </a>
+						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">System Maintanance</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/api/reboot">Reboot</a></li>
+						  </ul>
+						</li>						
 						<li class="nav-item">
 						  <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Home Assistant Integration</a>
 						</li>
@@ -46,12 +56,16 @@
 										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
 										</tbody>
 									</table>
+									<div class="spinner-border text-light" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;">
+									  <span class="visually-hidden">Loading...</span>
+									</div>									
 							  </div>
 							  <div class="card card-body bg-dark text-light" id="idAdminModestatus">
 									<div class="card card-body" style="background-color:#EA1F4B;">
 									  <center>Admin Mode Enabled</center>
 									</div>
-							  </div>							  
+							  </div>
+							  
 							  
 				</div>
 				<div class="col-sm-9" style="margin-top:10px;">			
@@ -223,7 +237,41 @@
       </div>
       <div class="modal-footer">
         
-		<button class="btn btn-sm btn-light" onclick="GetHASettings()" >Get Settings</button>
+		<button class="btn btn-sm btn-light" onclick="GetHASettings()" >Load Previously Saved Settings</button>
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		<button class="btn btn-sm btn-dark" onclick="FuncSaveHASettings()" data-bs-dismiss="modal" >Save</button>
+			
+      </div>
+    </div>
+  </div>
+</div>	
+<!-- SystemMaintanance -->
+<!-- Modal -->
+<div class="modal fade" id="SystemMaintanance" tabindex="-1" aria-labelledby="SetupHA" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SetupHA"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> System Maintanance</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  
+			<h6>Admin Mode</h6>
+			<div class="input-group mb-3">
+			  
+			  <input type="password" class="form-control" id="idAdminPassword" placeholder="Enter system password" aria-label="Enter system password" aria-describedby="button-addon2">
+			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableAdminMode()">Enable</button>
+			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableAdminMode()">Disable</button>
+			</div>
+			<div class="card card-body bg-dark text-light" style="margin-top:5px;">		  
+			  
+			  <button class="btn btn-light" type="button" id="button-addon2" onclick="FuncUpdateSystem()">Update System</button>
+			</div>			
+
+      </div>
+      <div class="modal-footer">
+        
+		
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
 		<button class="btn btn-sm btn-dark" onclick="FuncSaveHASettings()" data-bs-dismiss="modal" >Save</button>
 			
@@ -232,12 +280,12 @@
   </div>
 </div>	
 
-
 <script src="custom.js"></script>
 <script src="bootstrap.bundle.js"></script>
 
 
 </body>
 </html>
+
 
 
