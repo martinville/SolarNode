@@ -47,6 +47,11 @@
 										</tbody>
 									</table>
 							  </div>
+							  <div class="card card-body bg-dark text-light" id="idAdminModestatus">
+									<div class="card card-body" style="background-color:#EA1F4B;">
+									  <center>Admin Mode Enabled</center>
+									</div>
+							  </div>							  
 							  
 				</div>
 				<div class="col-sm-9" style="margin-top:10px;">			
@@ -80,7 +85,7 @@
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideSystemEndpoints" role="button" aria-expanded="false" aria-controls="ShowHideSystemEndpoints">Show</a>
-							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> System Endpoints</h6>						
+							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> System Data Points</h6>						
 							<div class="collapse" id="ShowHideSystemEndpoints">
 							  
 								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
@@ -89,7 +94,7 @@
 								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
 								  <button type="button" class="btn btn-light btn-sm float-end">Refresh</button>
 								  
-								  <span class="form-text text-light">List of configured endpoints.</span>
+								  <span class="form-text text-light">List of configured data points.</span>
 								  <br>
 								  <br>
 								  <div class="card card-body bg-dark text-light">
@@ -97,7 +102,7 @@
 									<table class="table table-sm table-striped table-dark">
 										<tbody>			
 										<tr><td><b>#ID</td><td><b>Name</td><td><b class="float-end"></td></tr>
-										<tr><td><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> 1</td><td>Battery SOC</td><td><button type="button" class="btn btn-dark btn-sm float-end">Delete</button> <span class="float-end" style="display:block;visibility: hidden;">|</span> <button type="button" class="btn btn-dark btn-sm float-end">Edit</button></td></tr>
+										<tr><td><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> 1</td><td>Battery SOC</td><td><button type="button" class="btn btn-dark btn-sm float-end">Test</button> <span class="float-end" style="display:block;visibility: hidden;">|</span> <button type="button" class="btn btn-dark btn-sm float-end">Delete</button><button type="button" class="btn btn-dark btn-sm float-end">Edit</button> <span class="float-end" style="display:block;visibility: hidden;">|</span></td></tr>
 
 										</tbody>
 									</table>
@@ -194,15 +199,15 @@
 			<form>
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Server IP Address</label>
-				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">				
+				<input type="text" name="fHAIP" class="form-control" id="fHAIP" aria-describedby="emailHelp">				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Port</label>
-				<input type="text" class="form-control" id="exampleInputPassword1">				
+				<input type="text" name="fHAPort" class="form-control" id="fHAPort" value="8123">				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">HTTP Connection Type</label>
-					<select class="form-select" aria-label="Default select example">
+					<select name="fHAHTTP" id="fHAHTTP" class="form-select" aria-label="Default select example">
 					  <option value="http">http</option>
 					  <option value="https">https</option>
 					</select>
@@ -210,15 +215,16 @@
 			  <div class="mb-3">
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Long Live Token</label>
-				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">				
+				<input type="text"  name="fToken" class="form-control" id="fToken" aria-describedby="emailHelp">				
 			  </div>
-			  </div>				  
+			  </div>
+			</form>			  
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
-		<button type="submit" class="btn btn-sm btn-dark">Save</button>
-		</form>		
+		<button class="btn btn-sm btn-dark" onclick="FuncSaveHASettings()">Save</button>
+				
       </div>
     </div>
   </div>
