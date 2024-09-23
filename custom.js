@@ -145,7 +145,7 @@ function FuncGetFileList(){
 		document.getElementById("idFiles").innerHTML = xhr.response;
 		
 	  } else {
-		console.log(`Error: ${xhr.status}`);
+		//console.log(`Error: ${xhr.status}`);
 		
 	  }
 	};	
@@ -189,16 +189,17 @@ function FuncSaveHASettings(){
 		
 		const xhr = new XMLHttpRequest();
 		xhr.open("GET", "api/savehssettings");
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.send(ParmsToSend);
 		xhr.responseType = "text";
 		xhr.onload = () => {
 		  if (xhr.readyState == 4 && xhr.status == 200) {
-			console.log(xhr.response);
+			//console.log(xhr.response);
 			alert(xhr.response);
 			document.getElementById("idFiles").innerHTML = xhr.response;
 			
 		  } else {
-			console.log(`Error: ${xhr.status}`);
+			//console.log(`Error: ${xhr.status}`);
 			
 		  }
 		};
