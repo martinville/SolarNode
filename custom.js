@@ -50,6 +50,7 @@ function FuncDisableAdminMode(){
 		if(xhr.response=="Admin mode disabled (Note: system is now secure until you enable admin mode."){			
 				document.getElementById("idAdminModestatus").style.visibility = "hidden"; 
 				document.getElementById("idAdminModestatus").style.display = "none";
+				alert("Admin mode disabled.");
 		}
 		
 	  } else {
@@ -222,7 +223,7 @@ function GetHASettings(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
-		//alert(obj_SysInfo.HAIP);
+		alert(xhr.response);
 	  	
 		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
 			alert(xhr.response);
