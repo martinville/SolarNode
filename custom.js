@@ -189,8 +189,9 @@ function FuncSaveHASettings(){
 		
 		const xhr = new XMLHttpRequest();
 		var url = "api/savehssettings?" + ParmsToSend ;
+		//alert(url);
 		xhr.open("GET", url );	
-		alert("api/savehssettings?" + ParmsToSend );		
+				
 		xhr.send();
 		xhr.responseType = "text";
 		xhr.onload = () => {
