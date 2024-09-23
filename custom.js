@@ -205,5 +205,37 @@ function FuncSaveHASettings(){
 			
 		  }
 		};
+		document.getElementById("fHAIP").value="";
+		document.getElementById("fHAPort").value="";
+		document.getElementById("fHAHTTP").value="";
+		document.getElementById("fToken").value="";
 	
+}
+
+function GetHASettings(){
+	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "haconfig.json");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		const obj_SysInfo = JSON.parse(xhr.response);
+		//alert(obj_SysInfo.HAIP);
+	  	
+		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
+			alert(xhr.response);
+		}else{
+		document.getElementById("fHAIP").innerHTML = obj_SysInfo.HAIP;
+		document.getElementById("fHAPort").innerHTML = obj_SysInfo.HAPort;
+		document.getElementById("fHAHTTP").innerHTML = obj_SysInfo.HAHTTP;
+		document.getElementById("fToken").innerHTML = obj_SysInfo.HALongToken;
+		}
+				
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};
 }
