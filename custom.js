@@ -188,9 +188,8 @@ function FuncSaveHASettings(){
 		alert(ParmsToSend);
 		
 		const xhr = new XMLHttpRequest();
-		xhr.open("GET", "api/savehssettings");
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.send(ParmsToSend);
+		xhr.open("GET", "api/savehssettings?" + ParmsToSend );		
+		xhr.send();
 		xhr.responseType = "text";
 		xhr.onload = () => {
 		  if (xhr.readyState == 4 && xhr.status == 200) {
