@@ -111,9 +111,7 @@ function FuncGetSystemInfo(){
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(obj_SysInfo.chipcapacity);
 		
-		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + " kb / " + obj_SysInfo.chipcapacity + " kb";
-		
-		document.getElementById("idUpTime").innerHTML = obj_SysInfo.Uptime;
+		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + " kb / " + obj_SysInfo.chipcapacity + " kb";				
 		//Modal values
 		document.getElementById("idchipmodel").innerHTML = obj_SysInfo.chipmodel;
 		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp;
