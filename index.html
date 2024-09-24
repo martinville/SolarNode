@@ -45,40 +45,34 @@
 				</nav>
 
 			<div class="row">
-				<div class="col-sm-3" style="margin-top:10px;">
+
+				<div class="col-sm-12" style="margin-top:1px;">
+						<div class="card card-body bg-dark text-light" id="idAdminModestatus">
+									<div class="card card-body" style="background-color:#EA1F4B;">
+									  <center>Admin Mode Enabled</center>
+									</div>
+						</div>
+						
+					<div class="card bg-dark text-light">
+					  <div class="card-body">
+							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideInverterInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
+							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>						
+							<div class="collapse" id="ShowHideInverterInfo">
+							  <br>
 							  <div class="card card-body bg-dark text-light">
-								<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>								
-									<table class="table table-sm table-borderless table-dark">
+									<table class="table table-sm table-striped table-dark">									
 										<tbody>			
 										<tr><td>Inverter Model</td><td id="idinvertermodel"></td></tr>
 										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
 										<tr><td>Phase</td><td id="idphase"></td></tr>
+										<tr><td>MPPTs</td><td id="idphase"></td></tr>
 										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
 										</tbody>
 									</table>								
 							  </div>
-							  <div class="card card-body bg-dark text-light" id="idAdminModestatus">
-									<div class="card card-body" style="background-color:#EA1F4B;">
-									  <center>Admin Mode Enabled</center>
-									</div>
-							  </div>
-							  <div class="card card-body bg-dark text-light" id="idSystemUpdating" style="visibility:hidden;display:none;">
-							  			<table>
-											<tr>
-												<td><div class="spinner-border text-warning" role="status"></div></td>
-												<td>Updating System</td>
-											</tr>
-										</table>
-							  </div>							  
-							  
-							  
-							  
-							  
-
-							  
-							  
-				</div>
-				<div class="col-sm-9" style="margin-top:10px;">			
+							</div>	
+					  </div>
+					</div>					
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideDeviceInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
@@ -150,9 +144,10 @@
 							  </div>
 							</div>	
 					  </div>
-					</div>					
+					</div>
+					
 				</div>
-			</div>
+
 <br><br><br>
 </div>
 
