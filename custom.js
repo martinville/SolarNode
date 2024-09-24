@@ -223,7 +223,7 @@ function GetHASettings(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
-		alert(xhr.response);
+		//alert(xhr.response);
 	  	
 		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
 			alert(xhr.response);
