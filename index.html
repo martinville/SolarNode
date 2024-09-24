@@ -16,7 +16,7 @@
 					<a class="navbar-brand" href="#">
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;">
 						<span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"> <small><small><small><small><small>V1.08</small></small></small></small></a>
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"> <small><small><small><small><small>V1.07</small></small></small></small></a>
 						
 						
 
@@ -54,32 +54,11 @@
 			<div class="row">
 
 				<div class="col-sm-12" style="margin-top:1px;">
-						<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
-									<div class="card card-body" style="background-color:#EA1F4B;">
-									  <center>Admin Mode Enabled</center>
-									</div>
-						</div>
-						
-					<div class="card bg-dark text-light">
-					  <div class="card-body">
-							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideInverterInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
-							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>						
-							<div class="collapse" id="ShowHideInverterInfo">
-							  <br>
-							  <div class="card card-body bg-dark text-light">
-									<table class="table table-sm table-striped table-dark">									
-										<tbody>			
-										<tr><td>Inverter Model</td><td id="idinvertermodel"></td></tr>
-										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
-										<tr><td>Phase</td><td id="idphase"></td></tr>
-										<tr><td>MPPTs</td><td id="idphase"></td></tr>
-										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
-										</tbody>
-									</table>								
-							  </div>
-							</div>	
-					  </div>
-					</div>					
+					<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
+							<div class="card card-body" style="background-color:#EA1F4B;">
+							  <center>Admin Mode Enabled</center>
+							</div>
+					</div>						
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideDeviceInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
@@ -100,13 +79,34 @@
 										<tr><td>Sketch Free Space</td><td id="idsketchfreecapacity"></td></tr>			
 										<tr><td>Flash space Used</td><td id="idspaceused"></td></tr>
 										<tr><td>Storage Info</td><td id="idDiskInfo"></td></tr>
-										<tr><td>Up Time</td><td id="idUpTime"></td></tr>								
+										<tr><td>Up Time</td><td id="idUptime"></td></tr>								
 										</tbody>
 									</table>								
 							  </div>
 							</div>	
 					  </div>
 					</div>						
+					<div class="card bg-dark text-light">
+					  <div class="card-body">
+							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideInverterInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
+							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>						
+							<div class="collapse" id="ShowHideInverterInfo">
+							  <br>
+							  <div class="card card-body bg-dark text-light">
+									<table class="table table-sm table-striped table-dark">									
+										<tbody>			
+										<tr><td>Inverter Model</td><td id="idinvertermodel"></td></tr>
+										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
+										<tr><td>Phase</td><td id="idphase"></td></tr>
+										<tr><td>MPPTs</td><td id="idphase"></td></tr>
+										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
+										</tbody>
+									</table>								
+							  </div>
+							</div>	
+					  </div>
+					</div>					
+					
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideSystemEndpoints" role="button" aria-expanded="false" aria-controls="ShowHideSystemEndpoints">Show</a>
@@ -158,31 +158,31 @@
 <br><br><br>
 </div>
 
-<!-- Create New Endpoint -->
+<!-- Create New recepe -->
 <!-- Modal -->
 <div class="modal fade" id="CreateEndPoint" tabindex="-1" aria-labelledby="CreateEndPoint" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="CreateEndPoint"><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="50px;"> Create New Endpoint</h5>
+        <h5 class="modal-title" id="CreateEndPoint"><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="50px;"> Create New Recipe</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 			<form>
 			  <div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Address ID</label>
-				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<input type="text" class="form-control" name="fAddressID" id="fAddressID">
 				<div id="emailHelp" class="form-text">See the Synsynk MODBUS Documentation for more information on address and IDs</div>
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Address ID Firendly Name</label>
-				<input type="text" class="form-control" id="exampleInputPassword1">
+				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName">
 				<label class="form-label">Address ID System Name</label>
-				<input type="text" class="form-control" disabled id="exampleInputPassword1">				
+				<input type="text" class="form-control" disabled name="fAddrSystemName">				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Unit Of Measurment</label>
-					<select class="form-select" aria-label="Default select example">
+					<select class="form-select" name="fUOM" id="fUOM">
 					  <option value="">None</option>
 					  <option value="%">%</option>
 					  <option value="°C">Temperature (C)</option>					  
@@ -196,7 +196,7 @@
 			  </div>
 			  <div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Factor Formula</label>
-				<input type="text" class="form-control" value="0" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<input type="text" class="form-control" value="0" name="fFactor" id="fFactor">
 				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it as 0 if you don't want to add a calculation.</div>
 			  </div>			  
 

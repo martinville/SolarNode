@@ -125,6 +125,7 @@ function FuncGetSystemInfo(){
 		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity;
 		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity;
 		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + " kb";
+		document.getElementById("idUptime").innerHTML = obj_SysInfo.Uptime;
 		
 		
 	  } else {
@@ -132,6 +133,10 @@ function FuncGetSystemInfo(){
 		
 	  }
 	};	
+}
+
+function FuncSaveRecipe(){
+	alert("Saving Recipe");
 }
 
 function FuncGetFileList(){
