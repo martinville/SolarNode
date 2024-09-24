@@ -253,6 +253,7 @@ function RebootDevice(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		alert(xhr.response);
+
 	  } else {
 		//console.log(`Error: ${xhr.status}`);
 		
