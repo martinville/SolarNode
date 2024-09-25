@@ -100,14 +100,14 @@ function FuncUpdateSystem(){
 }
 
 function FuncGetSystemInfo(){
-	//{"cputemp":40.00,"cpucount":2,"cpufreq":240,"chipcapacity":4096,"sketchcapacity":999,"sketchfreecapacity":1280,"chipmodel":"ESP32-D0WD-V3","macaddr":"C45BBE30B984","serial":"2302246241","spaceused":268,"adminmode":1,"Uptime":"1 Mins"}
+	//{"cputemp":50.00,"cpucount":2,"cpufreq":240,"chipcapacity":4096,"sketchcapacity":1005,"sketchfreecapacity":1280,"chipmodel":"ESP32-D0WD","macaddr":"4C11AE659D2C","serial":"4C11AE659D2C","spaceused":192,"adminmode":0,"Uptime":"1 Mins","MDNS":"SOL1","SSID":"BOB","WIFIIP":"192.168.1.147"}
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/getsysteminfo");
 	xhr.send();
 	xhr.responseType = "text";
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
-		//console.log(xhr.response);
+		console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(obj_SysInfo.chipcapacity);
 		
@@ -117,13 +117,17 @@ function FuncGetSystemInfo(){
 		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp;
 		document.getElementById("idcpucount").innerHTML = obj_SysInfo.cpucount;
 		document.getElementById("idcpufreq").innerHTML = obj_SysInfo.cpufreq;
-		document.getElementById("idmacaddr").innerHTML = obj_SysInfo.macaddr;
-		document.getElementById("Uptime").innerHTML = obj_SysInfo.Uptime;
+		document.getElementById("idmacaddr").innerHTML = obj_SysInfo.macaddr;		
 		document.getElementById("idchipcapacity").innerHTML = obj_SysInfo.chipcapacity;
 		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity;
 		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity;
 		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + " kb";
 		document.getElementById("idUptime").innerHTML = obj_SysInfo.Uptime;
+		//Network
+		document.getElementById("idMDNSName").innerHTML = obj_SysInfo.MDNS;
+		document.getElementById("idAPName").innerHTML = obj_SysInfo.SSID;
+		document.getElementById("idIPAddr").innerHTML = obj_SysInfo.WIFIIP;
+	
 		
 		
 	  } else {
