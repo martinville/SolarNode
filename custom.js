@@ -114,13 +114,13 @@ function FuncGetSystemInfo(){
 		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + " kb / " + obj_SysInfo.chipcapacity + " kb";				
 		//Modal values
 		document.getElementById("idchipmodel").innerHTML = obj_SysInfo.chipmodel;
-		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp;
+		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp + " °C";
 		document.getElementById("idcpucount").innerHTML = obj_SysInfo.cpucount;
-		document.getElementById("idcpufreq").innerHTML = obj_SysInfo.cpufreq;
+		document.getElementById("idcpufreq").innerHTML = obj_SysInfo.cpufreq + " Mhz";
 		document.getElementById("idmacaddr").innerHTML = obj_SysInfo.macaddr;		
-		document.getElementById("idchipcapacity").innerHTML = obj_SysInfo.chipcapacity;
-		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity;
-		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity;
+		document.getElementById("idchipcapacity").innerHTML = obj_SysInfo.chipcapacity + " kb";;
+		document.getElementById("idsketchcapacity").innerHTML = obj_SysInfo.sketchcapacity + " kb";;
+		document.getElementById("idsketchfreecapacity").innerHTML = obj_SysInfo.sketchfreecapacity + " kb";;
 		document.getElementById("idspaceused").innerHTML = obj_SysInfo.spaceused + " kb";
 		document.getElementById("idUptime").innerHTML = obj_SysInfo.Uptime;
 		//Network
