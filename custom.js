@@ -147,6 +147,7 @@ function FuncSaveRecipe(){
 	var fFactor = document.getElementById("fFactor").value;
 	
 	var BuildURL = "api/saverecepe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
+	
 	//alert(BuildURL);
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", BuildURL);
@@ -154,16 +155,12 @@ function FuncSaveRecipe(){
 	xhr.responseType = "text";
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
-		//console.log(xhr.response);
+		//console.log(xhr.response);		
 		alert(xhr.response);
-
-		}
-		
 	  } else {
-		//console.log(`Error: ${xhr.status}`);
-		
+		//console.log(`Error: ${xhr.status}`);		
 	  }
-	};	
+	};
 }
 
 function FuncUpdateSystemName(){
