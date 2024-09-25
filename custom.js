@@ -1,6 +1,7 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
+
 //FuncHideFilemanager();
 
 function FuncShowFilemanager(){
@@ -107,14 +108,14 @@ function FuncGetSystemInfo(){
 	xhr.responseType = "text";
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
-		console.log(xhr.response);
+		//console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(obj_SysInfo.chipcapacity);
 		
 		document.getElementById("idDiskInfo").innerHTML = obj_SysInfo.spaceused + " kb / " + obj_SysInfo.chipcapacity + " kb";				
 		//Modal values
 		document.getElementById("idchipmodel").innerHTML = obj_SysInfo.chipmodel;
-		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp + " °C";
+		document.getElementById("idcputemp").innerHTML = obj_SysInfo.cputemp + " &deg;C";
 		document.getElementById("idcpucount").innerHTML = obj_SysInfo.cpucount;
 		document.getElementById("idcpufreq").innerHTML = obj_SysInfo.cpufreq + " Mhz";
 		document.getElementById("idmacaddr").innerHTML = obj_SysInfo.macaddr;		
@@ -138,7 +139,37 @@ function FuncGetSystemInfo(){
 }
 
 function FuncSaveRecipe(){
-	alert("Saving Recipe");
+	
+	var fAddressID = document.getElementById("fAddressID").value;
+	var fAddrFriendlyName = document.getElementById("fAddrFriendlyName").value;
+	var fAddrSystemName = document.getElementById("fAddrSystemName").value;
+	var fUOM = document.getElementById("fUOM").value;
+	var fFactor = document.getElementById("fFactor").value;
+	
+	var BuildURL = "api/saverecepe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
+	//alert(BuildURL);
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", BuildURL);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		alert(xhr.response);
+
+		}
+		
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+}
+
+function FuncUpdateSystemName(){
+	var strFriendlyName = document.getElementById("fAddrFriendlyName").value;
+	strFriendlyName  = strFriendlyName.replace(" ","_").toLowerCase();
+	document.getElementById("fAddrSystemName").value = "rcp_" + strFriendlyName;
 }
 
 function FuncGetFileList(){
@@ -268,3 +299,4 @@ function RebootDevice(){
 	};	
 	
 }
+

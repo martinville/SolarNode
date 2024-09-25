@@ -183,9 +183,9 @@
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Address ID Firendly Name</label>
-				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName">
+				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName" onchange="FuncUpdateSystemName();">
 				<label class="form-label">Address ID System Name</label>
-				<input type="text" class="form-control" disabled name="fAddrSystemName">				
+				<input type="text" class="form-control"  name="fAddrSystemName" id="fAddrSystemName" disabled>				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Unit Of Measurment</label>
@@ -252,8 +252,9 @@
 			  </div>
 			  </div>
 			</form>			  
-
+			<small><small>Home assistant settings will only be shown when this device is in admin mode.</small></small>
       </div>
+	  
       <div class="modal-footer">
         
 		<button class="btn btn-sm btn-light" onclick="GetHASettings()" >Load Previously Saved Settings</button>
