@@ -1,6 +1,7 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
+FuncGetRecipes();
 
 //FuncHideFilemanager();
 
@@ -161,6 +162,23 @@ function FuncSaveRecipe(){
 		//console.log(`Error: ${xhr.status}`);		
 	  }
 	};
+}
+function FuncGetRecipes(){
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/listrecipes");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		//alert(xhr.response);
+		document.getElementById("idRecipeFiles").innerHTML = xhr.response;
+		
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
 }
 
 function FuncUpdateSystemName(){
