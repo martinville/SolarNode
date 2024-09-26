@@ -172,6 +172,7 @@ function FuncGetRecipes(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		//alert(xhr.response);
+		var tblHeader = "<tr><td><b>ID</td><td><b>Friendly Name</td><td><b>System Name</td><td><b>UOM</td><td><b>Factor</td></tr>"
 		document.getElementById("idRecipeFiles").innerHTML = xhr.response;
 		
 	  } else {
