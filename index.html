@@ -16,7 +16,7 @@
 					<a class="navbar-brand" href="#">
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;">
 						<span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"> <small><small><small><small><small>V1.16</small></small></small></small></a>
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"> <small><small><small><small><small>V1.17</small></small></small></small></a>
 						
 						
 
@@ -34,14 +34,14 @@
 							System Settings
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">System Maintanance</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="20px;"> Enable Admin Mode</a></li>
+							<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="20px;"> Update Web UI</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
 						  </ul>
 						</li>						
-						<li class="nav-item">
-						  <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Home Assistant Integration</a>
-						</li>
+
 						<li class="nav-item">
 						  <a class="nav-link" aria-current="page" href="#">About SolarNode</a>
 						</li>						
@@ -54,6 +54,7 @@
 			<div class="row">
 
 				<div class="col-sm-12" style="margin-top:1px;">
+				
 					
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
@@ -87,6 +88,7 @@
 									
 							  </div>
 							</div>	
+							
 					  </div>
 					</div>						
 					<div class="card bg-dark text-light">
@@ -163,6 +165,7 @@
 				</div>
 
 <br><br><br>
+	</div>
 </div>
 
 <!-- Create New recepe -->
@@ -283,10 +286,7 @@
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableAdminMode()">Enable</button>
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableAdminMode()">Disable</button>
 			</div>
-			<div class="card card-body bg-dark text-light" style="margin-top:5px;">		  
-			  
-			  <button class="btn btn-light" type="button" id="button-addon2" onclick="FuncUpdateSystem()">Update WEB UI</button>
-			</div>			
+			
 
       </div>
       <div class="modal-footer">

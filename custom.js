@@ -149,7 +149,7 @@ function FuncSaveRecipe(){
 	
 	var BuildURL = "api/saverecipe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
 	
-	alert(BuildURL);
+	//alert(BuildURL);
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", BuildURL);
 	xhr.send();
@@ -172,7 +172,7 @@ function FuncGetRecipes(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		//alert(xhr.response);
-		var tblHeader = "<tr><td><b>ID</td><td><b>Friendly Name</td><td><b>System Name</td><td><b>UOM</td><td><b>Factor</td><td><b>Action</td></tr>";
+		var tblHeader = "<tr><td><b>ID</td><td><b>Friendly Name</td><td><b>System Name</td><td><b>UOM</td><td><b>Factor</td><td><b></td></tr>";
 		document.getElementById("idRecipeFiles").innerHTML = tblHeader +  xhr.response;
 		
 	  } else {
