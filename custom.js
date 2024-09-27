@@ -172,8 +172,8 @@ function FuncGetRecipes(){
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
 		//alert(xhr.response);
-		var tblHeader = "<tr><td><b>ID</td><td><b>Friendly Name</td><td><b>System Name</td><td><b>UOM</td><td><b>Factor</td></tr>"
-		document.getElementById("idRecipeFiles").innerHTML = xhr.response;
+		var tblHeader = "<tr><td><b>ID</td><td><b>Friendly Name</td><td><b>System Name</td><td><b>UOM</td><td><b>Factor</td></tr>";
+		document.getElementById("idRecipeFiles").innerHTML = tblHeader +  xhr.response;
 		
 	  } else {
 		//console.log(`Error: ${xhr.status}`);
@@ -295,6 +295,26 @@ function GetHASettings(){
 		
 	  }
 	};
+}
+
+function FuncaskDeleteFile(FileToDelete){
+	if (confirm("Are you sure you want to delete file: /" + FileToDelete)) {
+	  alert(FileToDelete);
+		xhr.open("GET", "api/deletefile?filename=" + FileToDelete );
+		xhr.send();
+		xhr.responseType = "text";
+		xhr.onload = () => {
+		  if (xhr.readyState == 4 && xhr.status == 200) {
+			//console.log(xhr.response);
+			alert(xhr.response);
+		  }
+		};		  
+	} else {
+
+	}
+	
+	
+
 }
 
 function RebootDevice(){
