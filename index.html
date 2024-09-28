@@ -34,10 +34,12 @@
 							System Settings
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="20px;"> Enable Admin Mode</a></li>
-							<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="20px;"> Update Web UI</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Settings</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
+							<li><hr class="dropdown-divider"></li>							
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
 							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web UI</a></li>
 							<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
 						  </ul>
 						</li>						
@@ -115,12 +117,14 @@
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideSystemEndpoints" role="button" aria-expanded="false" aria-controls="ShowHideSystemEndpoints">Show</a>
-							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Connection Recipes</h6>						
+							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h6>						
 							<div class="collapse" id="ShowHideSystemEndpoints">
 							  
-								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
+								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncaskDeleteFile('TEST')">Import from GitHub</button>
 								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
-								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncaskDeleteFile('TEST')">Download</button>
+								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
+								  
+								  
 								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
 								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetRecipes()">Refresh</button>
 								  
@@ -140,7 +144,8 @@
 									
 								  </div>
 								  <br>
-							  
+								  
+								<button type="button" class="btn btn-light btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
 							</div>	
 					  </div>
 					</div>
@@ -149,6 +154,8 @@
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideFilesystemInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
 							<h6><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File System Information</h6>						
 							<div class="collapse" id="ShowHideFilesystemInfo">
+							  <br>
+							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
 							  <span class="form-text text-light">List of files on this device.</span><br><br>
 							  <div class="card card-body bg-dark text-light">
 								<table class="table table-sm table-striped table-dark" id="idFiles" >
@@ -201,6 +208,9 @@
 					  <option value="W">Watts (W)</option>
 					  <option value="kWh">Killo Watt Hour (kWh)</option>
 					  <option value="Ah">Amp Hour (Ah)</option>					  
+					  <option value="Hz">Frequency Hz</option>	
+					  <option value="">Number</option>	
+					  <option value="Hz">State 1 or 0</option>	
 
 					</select>
 			  </div>
@@ -286,7 +296,43 @@
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableAdminMode()">Enable</button>
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableAdminMode()">Disable</button>
 			</div>
+			<h6><small><small>Please remember to disable admin mode when you are done. Admin mode will automatically be disabled after <b>1 hour.</b> </small></small></h6>
 			
+
+      </div>
+      <div class="modal-footer">
+        
+		
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+			
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SystemSettings -->
+<!-- Modal -->
+<div class="modal fade" id="SystemSettings" tabindex="-1" aria-labelledby="SystemSettings" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SystemSettings"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> System Settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+			Serial Port Poll Rate <small>(Seconds)</small>
+			<select class="form-select" aria-label="Default select example">			  
+			  <option value="5">5</option>
+			  <option value="10">10</option>
+			  <option value="20">20</option>
+			  <option value="30">30</option>
+			  <option value="40">40</option>
+			  <option value="50">50</option>
+			  <option value="60">60</option>
+			  <option value="120">120</option>
+			  <option value="180">180</option>
+			</select>	  
+
 
       </div>
       <div class="modal-footer">

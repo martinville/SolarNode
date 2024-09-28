@@ -336,3 +336,20 @@ function RebootDevice(){
 	
 }
 
+function FuncExecRecipes(){
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/exec_recipes");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		alert(xhr.response);
+
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+}
+
