@@ -34,8 +34,8 @@
 							System Settings
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Settings</a></li>
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Superuser Settings</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Options</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Advanded Settings</a></li>
 							<li><hr class="dropdown-divider"></li>							
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
 							<li><hr class="dropdown-divider"></li>
@@ -298,11 +298,13 @@
 			</div>
 			<h6>Enable / Disable Logging</h6>
 			<div class="input-group mb-3">
-			  
-			  
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableLog()">Enable</button>
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableLog()">Disable</button>
-			</div>			
+			</div>	
+			<h6>Update Web UI</h6>
+			<div class="input-group mb-3">
+			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncUpdateSystem()">Update Web Interface</button>
+			</div>				
 			<h6><small><small>Please remember to disable admin mode when you are done. Admin mode will automatically be disabled after <b>1 hour.</b> </small></small></h6>
 			
 
