@@ -35,7 +35,7 @@
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Settings</a></li>
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Superuser Settings</a></li>
 							<li><hr class="dropdown-divider"></li>							
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
 							<li><hr class="dropdown-divider"></li>
@@ -289,13 +289,20 @@
       </div>
       <div class="modal-body">
 	  
-			<h6>Admin Mode</h6>
+			<h6>Enable / Disable Admin Mode</h6>
 			<div class="input-group mb-3">
 			  
 			  <input type="password" class="form-control" id="idAdminPassword" placeholder="Enter system password" aria-label="Enter system password" aria-describedby="button-addon2">
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableAdminMode()">Enable</button>
 			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableAdminMode()">Disable</button>
 			</div>
+			<h6>Enable / Disable Logging</h6>
+			<div class="input-group mb-3">
+			  
+			  
+			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableLog()">Enable</button>
+			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableLog()">Disable</button>
+			</div>			
 			<h6><small><small>Please remember to disable admin mode when you are done. Admin mode will automatically be disabled after <b>1 hour.</b> </small></small></h6>
 			
 
