@@ -36,9 +36,10 @@
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Configuration</a></li>
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Advanded Settings</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#FileManager">File Manager</a></li>														
 							<li><hr class="dropdown-divider"></li>							
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
-							<li><hr class="dropdown-divider"></li>							
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>														
+							<li><hr class="dropdown-divider"></li>	
 							<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
 						  </ul>
 						</li>						
@@ -149,21 +150,7 @@
 							</div>	
 					  </div>
 					</div>
-					<div class="card bg-dark text-light">
-					  <div class="card-body">
-							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideFilesystemInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
-							<h6><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File System Information</h6>						
-							<div class="collapse" id="ShowHideFilesystemInfo">
-							  <br>
-							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
-							  <span class="form-text text-light">List of files on this device.</span><br><br>
-							  <div class="card card-body bg-dark text-light">
-								<table class="table table-sm table-striped table-dark" id="idFiles" >
-								</table>
-							  </div>
-							</div>	
-					  </div>
-					</div>
+
 					<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
 							<div class="card card-body" style="background-color:#EA1F4B;">
 							  <center><small>Admin Mode Enabled</small></center>
@@ -379,7 +366,38 @@
       </div>
     </div>
   </div>
-</div>	
+</div>
+
+<!-- File Manager -->
+<!-- Modal -->
+<div class="modal modal-xl fade" id="FileManager" tabindex="-1" aria-labelledby="FileManager" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="FileManager"><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="50px;"> File Manager</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+					<div class="card bg-dark text-light">
+					  <div class="card-body">																									
+							  <br>
+							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
+							  <span class="form-text text-light">List of files on this device.</span><br><br>
+							  <div class="card card-body bg-dark text-light">
+								<table class="table table-sm table-striped table-dark" id="idFiles" >
+								</table>
+							  </div>							
+					  </div>
+					</div>
+
+      </div>
+      <div class="modal-footer">
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>		 
+			
+      </div>
+    </div>
+  </div>
+</div>		
 
 <script src="custom.js"></script>
 <script src="bootstrap.bundle.js"></script>

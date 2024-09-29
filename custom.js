@@ -2,6 +2,7 @@ FuncGetAdminMode();
 FuncGetSystemInfo();
 FuncGetFileList();
 FuncGetRecipes();
+FuncGetLastConStatus();
 
 //FuncHideFilemanager();
 
@@ -401,3 +402,23 @@ function FuncLoadLog(){
 	  }
 	};	
 }
+
+function FuncGetLastConStatus(){	
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/getlastconstatus");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);		
+		
+		if(xhr.response=="Connected & Data OK"){document.getElementById("idserialcom").innerHTML = "<span class=\"badge bg-success\">" + xhr.response + "</span>";}
+		if(xhr.response=="Unknown"){document.getElementById("idserialcom").innerHTML = "<span class=\"badge bg-warning\">" + xhr.response + "</span>";}
+		if(xhr.response=="Serial Connection Timeout"){document.getElementById("idserialcom").innerHTML = "<span class=\"badge bg-danger\">" + xhr.response + "</span>";}
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+}
+
