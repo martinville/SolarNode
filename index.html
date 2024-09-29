@@ -106,7 +106,7 @@
 										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
 										<tr><td>Phase</td><td id="idphase"></td></tr>
 										<tr><td>MPPTs</td><td id="idphase"></td></tr>
-										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
+										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">--</span></td></tr>
 										</tbody>
 									</table>								
 							  </div>	
@@ -141,8 +141,8 @@
 								  <br>
 								  <div class="card card-body bg-dark text-light">
 									
-									<table class="table table-sm table-striped table-dark" id="idRecipeFiles">
-										<tbody>			
+									<table class="table table-sm table-striped table-dark" id="idRecipeFiles" style="font-size:12px;">
+										<tbody style="font-size:12px;">			
 										<tr><td><b>#ID</td><td><b>Name</td><td><b class="float-end"></td></tr>
 										<tr><td><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> 1</td><td>Battery SOC</td><td><button type="button" class="btn btn-dark btn-sm float-end">Test</button> <span class="float-end" style="display:block;visibility: hidden;">|</span> <button type="button" class="btn btn-dark btn-sm float-end">Delete</button><button type="button" class="btn btn-dark btn-sm float-end">Edit</button> <span class="float-end" style="display:block;visibility: hidden;">|</span></td></tr>
 
@@ -404,7 +404,7 @@
 							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
 							  <span class="form-text text-light">List of files on this device.</span><br><br>
 							  <div class="card card-body bg-dark text-light">
-								<table class="table table-sm table-striped table-dark" id="idFiles" >
+								<table class="table table-sm table-striped table-dark" id="idFiles" style="font-size:12px;" >
 								</table>
 							  </div>							
 					  </div>
