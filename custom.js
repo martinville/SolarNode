@@ -3,7 +3,7 @@ FuncGetSystemInfo();
 FuncGetFileList();
 FuncGetRecipes();
 FuncGetLastConStatus();
-
+GetSystemSettings();
 //FuncHideFilemanager();
 
 function FuncShowFilemanager(){
@@ -310,6 +310,35 @@ function GetHASettings(){
 		document.getElementById("fHAPort").value = obj_SysInfo.HAPort;
 		document.getElementById("fHAHTTP").value = obj_SysInfo.HAHTTP;
 		document.getElementById("fToken").value = obj_SysInfo.HALongToken;
+		//alert("HA Settings Fetched");
+		}
+				
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};
+}
+
+function GetSystemSettings(){
+	//{"SerialPollRate":"30","EnableHAIntegration":"No"}	
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "systemsettings.json");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		const obj_SysInfo = JSON.parse(xhr.response);
+		//alert(xhr.response);
+	  	
+		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
+			alert(xhr.response);
+		}else{
+
+		document.getElementById("fSerialPollRate").value = obj_SysInfo.SerialPollRate;
+		document.getElementById("fEnableHAIntegration").value = obj_SysInfo.EnableHAIntegration;
+
 		//alert("HA Settings Fetched");
 		}
 				
