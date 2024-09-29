@@ -9,8 +9,10 @@
 
 <body style="background-color:#1B1B1F;">
 
-<div class="container">
-	<br>
+
+	<div class="container">
+			<div class="row">
+				<div class="col-sm-12" style="margin-top:1px;">
 				<nav class="navbar navbar-dark bg-dark text-light">
 				  <div class="container-fluid">
 					<a class="navbar-brand" href="#">
@@ -52,22 +54,21 @@
 					</div>
 				  </div>
 				</nav>
+				</div>			
 
-			<div class="row">
-
-				<div class="col-sm-12" style="margin-top:1px;">
+				<div class="col-sm-4" style="margin-top:5px;">
 				
 					
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
 							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideDeviceInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
 							<h6><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"> Device Information</h6>						
-							<div class="collapse" id="ShowHideDeviceInfo">
+							<div class="collapse" id="ShowHideDeviceInfo" aria-expanded="true">
 							  <br>
 							  <div class="card card-body bg-dark text-light">
 									
 									<table class="table table-sm table-striped table-dark">
-										<tbody>
+										<tbody style="font-size:12px;">
 										<tr><td><h5>Device & Chip Information</h5></td><td></td></tr>
 										<tr><td>Chip Model</td><td id="idchipmodel"></td></tr>
 										<tr><td>Mac Address</td><td id="idmacaddr"></td></tr>
@@ -95,13 +96,12 @@
 					</div>						
 					<div class="card bg-dark text-light">
 					  <div class="card-body">
-							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideInverterInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
-							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>						
-							<div class="collapse" id="ShowHideInverterInfo">
+							
+							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>													
 							  <br>
 							  <div class="card card-body bg-dark text-light">
 									<table class="table table-sm table-striped table-dark">									
-										<tbody>			
+										<tbody style="font-size:12px;">			
 										<tr><td>Inverter Model</td><td id="idinvertermodel"></td></tr>
 										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
 										<tr><td>Phase</td><td id="idphase"></td></tr>
@@ -109,16 +109,24 @@
 										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">Connected</span></td></tr>
 										</tbody>
 									</table>								
-							  </div>
-							</div>	
+							  </div>	
 					  </div>
 					</div>					
 					
+
+
+					<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
+							<div class="card card-body" style="background-color:#EA1F4B;">
+							  <center><small>Admin Mode Enabled</small></center>
+							</div>
+					</div>
+					<br><br><br>
+				</div>
+				<div class="col-sm-8" style="margin-top:5px;">
 					<div class="card bg-dark text-light">
-					  <div class="card-body">
-							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideSystemEndpoints" role="button" aria-expanded="false" aria-controls="ShowHideSystemEndpoints">Show</a>
+					  <div class="card-body">							
 							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h6>						
-							<div class="collapse" id="ShowHideSystemEndpoints">
+							
 							  
 								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncaskDeleteFile('TEST')">Import from GitHub</button>
 								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
@@ -147,21 +155,15 @@
 								<a class="btn btn-dark btn-sm float-end"  role="button" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer" >View Log</a>  								
 								<span class="float-end" style="display:block;visibility: hidden;">|</span>
 								<button type="button" class="btn btn-dark btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
-							</div>	
+							
 					  </div>
-					</div>
-
-					<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
-							<div class="card card-body" style="background-color:#EA1F4B;">
-							  <center><small>Admin Mode Enabled</small></center>
-							</div>
-					</div>
-					<br><br><br>
+					</div>				
 				</div>
 
 <br><br><br>
 	</div>
 </div>
+
 
 <!-- Create New recepe -->
 <!-- Modal -->
