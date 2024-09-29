@@ -253,20 +253,42 @@ function FuncSaveHASettings(){
 		xhr.onload = () => {
 		  if (xhr.readyState == 4 && xhr.status == 200) {
 			//console.log(xhr.response);
-			alert(xhr.response);
-			document.getElementById("idFiles").innerHTML = xhr.response;
-			
+			alert(xhr.response);						
 		  } else {
 			//console.log(`Error: ${xhr.status}`);
 			
 		  }
 		};
-		document.getElementById("fHAIP").value="";
-		document.getElementById("fHAPort").value="";
-		document.getElementById("fHAHTTP").value="";
-		document.getElementById("fToken").value="";
 	
 }
+
+function FuncSaveSystemSettings(){
+		var fSerialPollRate=document.getElementById("fSerialPollRate").value;
+		var fEnableHAIntegration=document.getElementById("fEnableHAIntegration").value;
+		
+		//Build Parameters
+		var ParmsToSend='fSerialPollRate=' + fSerialPollRate + '&fEnableHAIntegration=' + fEnableHAIntegration;
+		
+		
+		const xhr = new XMLHttpRequest();
+		var url = "api/savesettings?" + ParmsToSend ;
+		//alert(url);
+		xhr.open("GET", url );	
+				
+		xhr.send();
+		xhr.responseType = "text";
+		xhr.onload = () => {
+		  if (xhr.readyState == 4 && xhr.status == 200) {
+			//console.log(xhr.response);
+			alert(xhr.response);						
+		  } else {
+			//console.log(`Error: ${xhr.status}`);
+			
+		  }
+		};
+	
+}
+
 
 function GetHASettings(){
 	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}	

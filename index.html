@@ -327,7 +327,7 @@
       </div>
       <div class="modal-body">
 			Serial Port Poll Rate <small>(Seconds)</small>
-			<select class="form-select" aria-label="Default select example">			  
+			<select class="form-select" aria-label="Default select example" id="fSerialPollRate">			  
 			  <option value="5">5</option>
 			  <option value="10">10</option>
 			  <option value="20">20</option>
@@ -340,7 +340,7 @@
 			</select>
 			<br>
 			Enable Home Assistant Integration
-			<select class="form-select" aria-label="Default select example">			  
+			<select class="form-select" aria-label="Default select example" id="fEnableHAIntegration">			  
 			  <option value="No">No</option>
 			  <option value="Yes">Yes</option>
 			</select>			
@@ -350,7 +350,7 @@
       <div class="modal-footer">
         
 		
-		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Save Settings</button>    
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncSaveSystemSettings()">Save Settings</button>    
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button> 
 			
       </div>
