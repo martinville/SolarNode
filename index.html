@@ -155,7 +155,8 @@
 							<div class="card card-body" style="background-color:#EA1F4B;">
 							  <center><small>Admin Mode Enabled</small></center>
 							</div>
-					</div>						
+					</div>
+					<br><br><br>
 				</div>
 
 <br><br><br>
@@ -203,9 +204,18 @@
 			  </div>
 			  <div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Factor Formula</label>
-				<input type="text" class="form-control" value="0" name="fFactor" id="fFactor">
-				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it as 0 if you don't want to add a calculation.</div>
-			  </div>			  
+				<input type="text" class="form-control" value="1" name="fFactor" id="fFactor">
+				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it 1 if you don't want to add a calculation.</div>
+			  </div>
+			<div class="input-group">
+			  <span class="input-group-text">Send to Home Assistant</span>			  
+				<select class="form-select" aria-label="Default select example">
+				  <option selected>No</option>
+				  <option value="1">Yes</option>				  				  
+				</select>
+			</div>			  
+			
+			  
 
       </div>
       <div class="modal-footer">
@@ -327,14 +337,21 @@
 			  <option value="60">60</option>
 			  <option value="120">120</option>
 			  <option value="180">180</option>
-			</select>	  
+			</select>
+			<br>
+			Enable Home Assistant Integration
+			<select class="form-select" aria-label="Default select example">			  
+			  <option value="No">No</option>
+			  <option value="Yes">Yes</option>
+			</select>			
 
 
       </div>
       <div class="modal-footer">
         
 		
-		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Save Settings</button>    
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button> 
 			
       </div>
     </div>
