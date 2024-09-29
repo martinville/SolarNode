@@ -143,7 +143,7 @@
 									
 								  </div>
 								  <br> 
-								<a class="btn btn-dark btn-sm float-end"  role="button"  data-bs-toggle="modal" data-bs-target="#LogViewer">View Log</a>  								
+								<a class="btn btn-dark btn-sm float-end"  role="button" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer" >View Log</a>  								
 								<span class="float-end" style="display:block;visibility: hidden;">|</span>
 								<button type="button" class="btn btn-dark btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
 							</div>	
@@ -366,13 +366,14 @@
       <div class="modal-body">
 			Serial Port Activity Log<br>
 			<small><small>Logs will only show when both Admin mode and Logging is enabled..</small></small>
-			<textarea class="form-control bg-dark" id="idLogViewer" rows="20" style="color:#f2b022;font-size: 12px;">No logging information currently available. Make sure both admin mode and logging is enabled.</textarea>
+			<textarea class="form-control bg-dark" id="idLogViewer" rows="30" style="color:#f2b022;font-size: 10px;font-family: Verdana, sans-serif;">No logging information currently available. Make sure both admin mode and logging is enabled.</textarea>
   
 
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncaskDeleteFile('log.txt')">Clear Log</button>   
+        <button type="button" class="btn btn-sm btn-light" onclick="FuncLoadLog()">Refresh</button>
+		<button type="button" class="btn btn-sm btn-light" onclick="FuncaskDeleteFile('log.txt')">Clear Log</button>   
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>		 
 			
       </div>
