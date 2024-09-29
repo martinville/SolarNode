@@ -34,12 +34,11 @@
 							System Settings
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Options</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Configuration</a></li>
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Advanded Settings</a></li>
 							<li><hr class="dropdown-divider"></li>							
 							<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA"><img src="homeassistant.png" alt="Bootstrap" class="img-fluid" width="20px;"> Home Assistant Integration</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web UI</a></li>
+							<li><hr class="dropdown-divider"></li>							
 							<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
 						  </ul>
 						</li>						
@@ -143,9 +142,10 @@
 									<br>
 									
 								  </div>
-								  <br>
-								  
-								<button type="button" class="btn btn-light btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
+								  <br> 
+								<a class="btn btn-dark btn-sm float-end"  role="button"  data-bs-toggle="modal" data-bs-target="#LogViewer">View Log</a>  								
+								<span class="float-end" style="display:block;visibility: hidden;">|</span>
+								<button type="button" class="btn btn-dark btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
 							</div>	
 					  </div>
 					</div>
@@ -193,7 +193,7 @@
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Address ID Firendly Name</label>
-				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName" onchange="FuncUpdateSystemName()">
+				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName" onchange="FuncUpdateSystemName()" maxlength="25">
 				<label class="form-label">Address ID System Name</label>
 				<input type="text" class="form-control"  name="fAddrSystemName" id="fAddrSystemName" disabled>				
 			  </div>
@@ -348,6 +348,32 @@
         
 		
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+			
+      </div>
+    </div>
+  </div>
+</div>	
+
+<!-- Log Viewer -->
+<!-- Modal -->
+<div class="modal modal-xl fade" id="LogViewer" tabindex="-1" aria-labelledby="LogViewer" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="LogViewer"><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="50px;"> Log Viewer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+			Serial Port Activity Log<br>
+			<small><small>Logs will only show when both Admin mode and Logging is enabled..</small></small>
+			<textarea class="form-control bg-dark" id="idLogViewer" rows="20" style="color:#f2b022;font-size: 12px;">No logging information currently available. Make sure both admin mode and logging is enabled.</textarea>
+  
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncaskDeleteFile('log.txt')">Clear Log</button>   
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>		 
 			
       </div>
     </div>

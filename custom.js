@@ -184,7 +184,7 @@ function FuncGetRecipes(){
 
 function FuncUpdateSystemName(){
 	var strFriendlyName = document.getElementById("fAddrFriendlyName").value;
-	strFriendlyName  = strFriendlyName.replace(" ","_").toLowerCase();
+	strFriendlyName  = strFriendlyName.replaceAll(" ","_").toLowerCase();
 	document.getElementById("fAddrSystemName").value = "rcp_" + strFriendlyName;
 }
 
