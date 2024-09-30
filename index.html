@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>SolarNODE</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+
 <link href="bootstrap.min.css" rel="stylesheet" >
 <link href="bootstrap.min.css.gz" rel="stylesheet" >
 
@@ -10,7 +16,9 @@
 <body style="background-color:#1B1B1F;">
 
 
-	<div class="container">
+	<div class="container-sm">
+			
+			
 			<div class="row">
 				<div class="col-sm-12" style="margin-top:1px;">
 				<nav class="navbar navbar-dark bg-dark text-light">
@@ -18,13 +26,11 @@
 					<a class="navbar-brand" href="#">
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;">
 						<span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="230px;"> <small><small><small><small><small>V1.17</small></small></small></small></a>
-						
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.17</small></small></small></small></a>
+						<button type="button" class="btn btn-sm btn-danger" id="idAdminModestatus" style="visibility:visible;display:none;">Admin Mode Enabled <span class="badge bg-secondary">!</span></button>
 						
 
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					  <span class="navbar-toggler-icon"></span>
-					</button>
+	
 					
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -56,14 +62,30 @@
 				</nav>
 				</div>			
 
-				<div class="col-sm-4" style="margin-top:5px;">
-				
+				<div class="col-sm-12" style="margin-top:15px;">				
+					<ul class="nav nav-tabs">
+					  <li class="nav-item">
+						<a id="iddeviceinfo" class="nav-link active" href="#" onclick="FuncTabCtrl('iddeviceinfo')"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"></a>
+					  </li>
+					  <li class="nav-item" >
+						<a id="idinverterinfo"  class="nav-link" href="#" onclick="FuncTabCtrl('idinverterinfo')"><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"></a>
+					  </li>					  
+					  <li class="nav-item">
+						<a id="idrecipes" class="nav-link" href="#" onclick="FuncTabCtrl('idrecipes')" ><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"></a>
+					  </li>
+					  <li class="nav-item">
+						<a id="idfilesysteminfo" class="nav-link" href="#" onclick="FuncTabCtrl('idfilesysteminfo')"><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"></a>
+					  </li>    
+					  <li class="nav-item">
+						<a id="idsystemsettings" class="nav-link" href="#" onclick="FuncTabCtrl('idsystemsettings')"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"></a>
+					  </li>
+
+					</ul>				
 					
-					<div class="card bg-dark text-light">
-					  <div class="card-body">
-							<a class="btn btn-primary float-end btn-sm btn-dark" data-bs-toggle="collapse" href="#ShowHideDeviceInfo" role="button" aria-expanded="false" aria-controls="ShowHideFilesystemInfo">Show</a>
+					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
+					  <div class="card-body">							
 							<h6><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"> Device Information</h6>						
-							<div class="collapse" id="ShowHideDeviceInfo" aria-expanded="true">
+							
 							  <br>
 							  <div class="card card-body bg-dark text-light">
 									
@@ -87,14 +109,12 @@
 										<tr><td>Device IP</td><td id="idIPAddr"></td></tr>										
 										</tbody>
 									</table>
-								
-									
 							  </div>
-							</div>	
+							
 							
 					  </div>
 					</div>						
-					<div class="card bg-dark text-light">
+					<div class="card bg-dark text-light" id="idInverterInfoSection" style="visibility:hidden;display:none;">
 					  <div class="card-body">
 							
 							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>													
@@ -102,6 +122,7 @@
 							  <div class="card card-body bg-dark text-light">
 									<table class="table table-sm table-striped table-dark">									
 										<tbody style="font-size:12px;">			
+										<tr><td><h5>Inverter Details</h5></td><td></td></tr>
 										<tr><td>Inverter Model</td><td id="idinvertermodel"></td></tr>
 										<tr><td>Inverter Serial</td><td id="idinverterserial"></td></tr>
 										<tr><td>Phase</td><td id="idphase"></td></tr>
@@ -111,23 +132,10 @@
 									</table>								
 							  </div>	
 					  </div>
-					</div>					
-					
-
-
-					<div class="card card-body bg-dark text-light" id="idAdminModestatus" style="visibility:hidden;display:none;">
-							<div class="card card-body" style="background-color:#EA1F4B;">
-							  <center><small>Admin Mode Enabled</small></center>
-							</div>
 					</div>
-					<br><br><br>
-				</div>
-				<div class="col-sm-8" style="margin-top:5px;">
-					<div class="card bg-dark text-light">
+					<div class="card bg-dark text-light"  id="idRecipeInfoSection" style="visibility:hidden;display:none;">
 					  <div class="card-body">							
-							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h6>						
-							
-							  
+							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h6>													  
 								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncaskDeleteFile('TEST')">Import from GitHub</button>
 								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
 								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
@@ -157,8 +165,25 @@
 								<button type="button" class="btn btn-dark btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
 							
 					  </div>
-					</div>				
+					</div>
+					<div class="card bg-dark text-light" id="idFileListInfoSection" style="visibility:hidden;display:none;">
+					  <div class="card-body">
+							  <h6><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File Manager</h6>								  
+							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
+							  <span class="form-text text-light">List of files on this device.</span><br><br>
+							  <div class="card card-body bg-dark text-light">
+								<table class="table table-sm table-striped table-dark" id="idFiles" style="font-size:12px;" >
+								</table>
+							  </div>							
+					  </div>
+					</div>					
+					
+
+
+
+					<br><br><br>
 				</div>
+
 
 <br><br><br>
 	</div>
@@ -387,37 +412,7 @@
     </div>
   </div>
 </div>
-
-<!-- File Manager -->
-<!-- Modal -->
-<div class="modal modal-xl fade" id="FileManager" tabindex="-1" aria-labelledby="FileManager" aria-hidden="true">
-  <div class="modal-dialog bg-dark">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="FileManager"><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="50px;"> File Manager</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-					<div class="card bg-dark text-light">
-					  <div class="card-body">																									
-							  <br>
-							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
-							  <span class="form-text text-light">List of files on this device.</span><br><br>
-							  <div class="card card-body bg-dark text-light">
-								<table class="table table-sm table-striped table-dark" id="idFiles" style="font-size:12px;" >
-								</table>
-							  </div>							
-					  </div>
-					</div>
-
-      </div>
-      <div class="modal-footer">
-		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>		 
-			
-      </div>
-    </div>
-  </div>
-</div>		
+	
 
 <script src="custom.js"></script>
 <script src="bootstrap.bundle.js"></script>

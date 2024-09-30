@@ -6,6 +6,35 @@ FuncGetLastConStatus();
 GetSystemSettings();
 //FuncHideFilemanager();
 
+function FuncTabCtrl(SelectedTab)
+{		
+	document.getElementById("iddeviceinfo").classList.remove('active');
+	document.getElementById("idinverterinfo").classList.remove('active');
+	document.getElementById("idrecipes").classList.remove('active');
+	document.getElementById("idfilesysteminfo").classList.remove('active');
+	document.getElementById("idsystemsettings").classList.remove('active');
+	
+	//Hide Sections
+	
+	document.getElementById("idDeviceInfoSection").style.visibility = "hidden";document.getElementById("idDeviceInfoSection").style.display = "none";
+	document.getElementById("idInverterInfoSection").style.visibility = "hidden";document.getElementById("idInverterInfoSection").style.display = "none";
+	document.getElementById("idRecipeInfoSection").style.visibility = "hidden";document.getElementById("idRecipeInfoSection").style.display = "none";
+	document.getElementById("idFileListInfoSection").style.visibility = "hidden";document.getElementById("idFileListInfoSection").style.display = "none";
+	//document.getElementById("idDeviceInfoSection").style.visibility = "hidden";document.getElementById("idDeviceInfoSection").style.display = "none";	
+	
+	if(SelectedTab=="iddeviceinfo"){document.getElementById("iddeviceinfo").classList.add('active');document.getElementById("idDeviceInfoSection").style.visibility = "visible";document.getElementById("idDeviceInfoSection").style.display = "block";}
+	if(SelectedTab=="idinverterinfo"){document.getElementById("idinverterinfo").classList.add('active');document.getElementById("idInverterInfoSection").style.visibility = "visible";document.getElementById("idInverterInfoSection").style.display = "block";}
+	if(SelectedTab=="idrecipes"){document.getElementById("idrecipes").classList.add('active');document.getElementById("idRecipeInfoSection").style.visibility = "visible";document.getElementById("idRecipeInfoSection").style.display = "block";}
+	if(SelectedTab=="idfilesysteminfo"){document.getElementById("idfilesysteminfo").classList.add('active');document.getElementById("idFileListInfoSection").style.visibility = "visible";document.getElementById("idFileListInfoSection").style.display = "block";}
+	if(SelectedTab=="idsystemsettings"){document.getElementById("idsystemsettings").classList.add('active');}
+	
+	
+
+	
+
+	
+}
+
 function FuncShowFilemanager(){
 	FuncGetFileList();
 	document.getElementById("idFileManager").style.visibility = "visible"; 
@@ -331,16 +360,9 @@ function GetSystemSettings(){
 		//console.log(xhr.response);
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(xhr.response);
-	  	
-		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
-			alert(xhr.response);
-		}else{
-
-		document.getElementById("fSerialPollRate").value = obj_SysInfo.SerialPollRate;
-		document.getElementById("fEnableHAIntegration").value = obj_SysInfo.EnableHAIntegration;
-
-		//alert("HA Settings Fetched");
-		}
+		document.getElementById("fSerialPollRate").innerHTML = "<option value=\"" + obj_SysInfo.SerialPollRate + "\">" + obj_SysInfo.SerialPollRate + "</option><option value=\"5\">5</option><option value=\"10\">10</option><option value=\"20\">20</option><option value=\"30\">30</option><option value=\"40\">40</option><option value=\"50\">50</option><option value=\"60\">60</option><option value=\"120\">120</option><option value=\"180\">180</option>";
+		document.getElementById("fEnableHAIntegration").innerHTML = "<option value=\"" + obj_SysInfo.EnableHAIntegration + "\">" + obj_SysInfo.EnableHAIntegration + "</option><option value=\"No\">No</option><option value=\"Yes\">Yes</option>"
+		
 				
 	  } else {
 		//console.log(`Error: ${xhr.status}`);
@@ -358,7 +380,7 @@ function FuncaskDeleteFile(FileToDelete){
 		xhr.onload = () => {
 		  if (xhr.readyState == 4 && xhr.status == 200) {
 			//console.log(xhr.response);
-			alert(xhr.response);
+			//alert(xhr.response);
 		  }
 		};		  
 	} else {
@@ -396,7 +418,7 @@ function FuncExecRecipes(){
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		//console.log(xhr.response);
-		alert(xhr.response);
+		//alert(xhr.response);
 
 	  } else {
 		//console.log(`Error: ${xhr.status}`);
