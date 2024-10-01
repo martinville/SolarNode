@@ -20,13 +20,13 @@ function FuncTabCtrl(SelectedTab)
 	document.getElementById("idInverterInfoSection").style.visibility = "hidden";document.getElementById("idInverterInfoSection").style.display = "none";
 	document.getElementById("idRecipeInfoSection").style.visibility = "hidden";document.getElementById("idRecipeInfoSection").style.display = "none";
 	document.getElementById("idFileListInfoSection").style.visibility = "hidden";document.getElementById("idFileListInfoSection").style.display = "none";
-	//document.getElementById("idDeviceInfoSection").style.visibility = "hidden";document.getElementById("idDeviceInfoSection").style.display = "none";	
+	document.getElementById("idSettingsSection").style.visibility = "hidden";document.getElementById("idSettingsSection").style.display = "none";	
 	
 	if(SelectedTab=="iddeviceinfo"){document.getElementById("iddeviceinfo").classList.add('active');document.getElementById("idDeviceInfoSection").style.visibility = "visible";document.getElementById("idDeviceInfoSection").style.display = "block";}
 	if(SelectedTab=="idinverterinfo"){document.getElementById("idinverterinfo").classList.add('active');document.getElementById("idInverterInfoSection").style.visibility = "visible";document.getElementById("idInverterInfoSection").style.display = "block";}
 	if(SelectedTab=="idrecipes"){document.getElementById("idrecipes").classList.add('active');document.getElementById("idRecipeInfoSection").style.visibility = "visible";document.getElementById("idRecipeInfoSection").style.display = "block";}
 	if(SelectedTab=="idfilesysteminfo"){document.getElementById("idfilesysteminfo").classList.add('active');document.getElementById("idFileListInfoSection").style.visibility = "visible";document.getElementById("idFileListInfoSection").style.display = "block";}
-	if(SelectedTab=="idsystemsettings"){document.getElementById("idsystemsettings").classList.add('active');}
+	if(SelectedTab=="idsystemsettings"){document.getElementById("idsystemsettings").classList.add('active');document.getElementById("idSettingsSection").style.visibility = "visible";document.getElementById("idSettingsSection").style.display = "block";}
 	
 	
 
@@ -425,6 +425,45 @@ function FuncExecRecipes(){
 		
 	  }
 	};	
+}
+
+function FuncToggleLog(){
+	
+	var CheckBoxVal = document.getElementById("idToggleLog").checked
+	
+	if(CheckBoxVal==true){
+		const xhr = new XMLHttpRequest();
+		xhr.open("GET", "api/enablelog");
+		xhr.send();
+		xhr.responseType = "text";
+		xhr.onload = () => {
+		  if (xhr.readyState == 4 && xhr.status == 200) {
+			//console.log(xhr.response);
+			if(xhr.response=="Logging enabled"){
+				alert(xhr.response);
+				document.getElementById("idToggleLog").checked=true;
+			}else{document.getElementById("idToggleLog").checked=false;}			
+		  }
+		};	
+	}else{
+		const xhr = new XMLHttpRequest();
+		xhr.open("GET", "api/disablelog");
+		xhr.send();
+		xhr.responseType = "text";
+		xhr.onload = () => {
+		  if (xhr.readyState == 4 && xhr.status == 200) {
+			alert(xhr.response);
+			if(xhr.response=="Logging disabled"){
+				
+				document.getElementById("idToggleLog").checked=false;
+			}
+		  }
+		};			
+		
+	}
+
+	
+	
 }
 
 function FuncEnableLog(){

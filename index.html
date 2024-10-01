@@ -84,7 +84,7 @@
 					
 					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
 					  <div class="card-body">							
-							<h6><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"> Device Information</h6>						
+							<h4><img src="chip.png" alt="Bootstrap" class="img-fluid" width="30px;"> Device Information</h4>
 							
 							  <br>
 							  <div class="card card-body bg-dark text-light">
@@ -117,7 +117,7 @@
 					<div class="card bg-dark text-light" id="idInverterInfoSection" style="visibility:hidden;display:none;">
 					  <div class="card-body">
 							
-							<h6><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h6>													
+							<h4><img src="inverter.png" alt="Bootstrap" class="img-fluid" width="30px;"> Inverter Information</h4>
 							  <br>
 							  <div class="card card-body bg-dark text-light">
 									<table class="table table-sm table-striped table-dark">									
@@ -135,14 +135,20 @@
 					</div>
 					<div class="card bg-dark text-light"  id="idRecipeInfoSection" style="visibility:hidden;display:none;">
 					  <div class="card-body">							
-							<h6><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h6>													  
-								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncaskDeleteFile('TEST')">Import from GitHub</button>
-								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
-								  <button type="button" class="btn btn-light btn-sm float-end" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New</button>
-								  
-								  
-								  <span class="float-end" style="display:block;visibility: hidden;">|</span>
-								  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetRecipes()">Refresh</button>
+							<h4><img src="nodes.png" alt="Bootstrap" class="img-fluid" width="30px;"> Direct RS232 Interface Recipes</h4> 
+							<div class="btn-group float-end">
+							  <button type="button" class="btn btn-sm btn-dark dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+								Options
+							  </button>
+							  <ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New Recipe</a></li>
+								<li><a class="dropdown-item" href="#" onclick="FuncGetRecipes()">Refresh Recipes</a></li>
+								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repository)</a></li>
+								<li><hr class="dropdown-divider"></li>								
+								<li><a class="dropdown-item" href="#" onclick="FuncExecRecipes()">Execute Recipes</a></li>
+								<li><a class="dropdown-item" href="#" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer">View Log</a></li>
+							  </ul>
+							</div>									  
 								  
 								  <span class="form-text text-light">List of configured data points.</span>
 								  <br>
@@ -163,12 +169,12 @@
 								<a class="btn btn-dark btn-sm float-end"  role="button" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer" >View Log</a>  								
 								<span class="float-end" style="display:block;visibility: hidden;">|</span>
 								<button type="button" class="btn btn-dark btn-sm float-end" onclick="FuncExecRecipes()">Execute Recipes</button>
-							
+							<br>
 					  </div>
 					</div>
 					<div class="card bg-dark text-light" id="idFileListInfoSection" style="visibility:hidden;display:none;">
 					  <div class="card-body">
-							  <h6><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File Manager</h6>								  
+							  <h4><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File Manager</h4>								  
 							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
 							  <span class="form-text text-light">List of files on this device.</span><br><br>
 							  <div class="card card-body bg-dark text-light">
@@ -176,7 +182,42 @@
 								</table>
 							  </div>							
 					  </div>
-					</div>					
+					</div>
+					<div class="card bg-dark text-light" id="idSettingsSection" style="visibility:hidden;display:none;">
+					  <div class="card-body">
+							<!-- Example single danger button -->
+							<div class="btn-group float-end">
+							  <button type="button" class="btn btn-sm btn-dark dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+								Configuration
+							  </button>
+							  <ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>																
+								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repository)</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
+								<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web Interface</a></li>
+							  </ul>
+							</div>					  
+							  
+							  <h4><img src="settings.png" alt="Bootstrap" class="img-fluid" width="30px;"> System Settings</h4>	
+							<br>
+							  <h5>General Settings</h5>
+							  <hr></hr>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="idToggleLog" onclick="FuncToggleLog()">
+									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Logging</label><br>
+									<i><small style="color:grey;">Note: Logging is meant for debugging purposes only without any log rotation functionality. If left on permanently it may fill up internal storage causing unknown effects. It's recommended to delete the log when done debugging.</small></i>
+								</div>
+								<br>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Home Assistant Integration</label><br>
+									<i><small style="color:grey;">Home Asisstant configuration has to be in place for this feature to work.</small></i>
+								</div>
+								<br>
+	
+					  </div>
+					</div>						
 					
 
 
@@ -192,7 +233,7 @@
 
 <!-- Create New recepe -->
 <!-- Modal -->
-<div class="modal fade" id="CreateEndPoint" tabindex="-1" aria-labelledby="CreateEndPoint" aria-hidden="true">
+<div class="modal modal-xl fade" id="CreateEndPoint" tabindex="-1" aria-labelledby="CreateEndPoint" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
@@ -308,36 +349,22 @@
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="SetupHA"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="SetupHA"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> Enable / Disable Admin Mode</h5>
       </div>
-      <div class="modal-body">
-	  
-			<h6>Enable / Disable Admin Mode</h6>
-			<div class="input-group mb-3">
-			  
-			  <input type="password" class="form-control" id="idAdminPassword" placeholder="Enter system password" aria-label="Enter system password" aria-describedby="button-addon2">
-			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableAdminMode()">Enable</button>
-			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableAdminMode()">Disable</button>
-			</div>
-			<h6>Enable / Disable Logging</h6>
-			<div class="input-group mb-3">
-			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncEnableLog()">Enable</button>
-			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncDisableLog()">Disable</button>
-			</div>	
-			<h6>Update Web UI</h6>
-			<div class="input-group mb-3">
-			  <button class="btn btn-dark" type="button" id="button-addon2"  onclick="FuncUpdateSystem()">Update Web Interface</button>
-			</div>				
-			<h6><small><small>Please remember to disable admin mode when you are done. Admin mode will automatically be disabled after <b>1 hour.</b> </small></small></h6>
-			
+      <form>
+	  <div class="modal-body">
+
+			<div class="mb-3">
+			  <label for="exampleFormControlInput1" class="form-label">Enter System Password</label>
+			  <input type="password" class="form-control" id="idAdminPassword" placeholder="Enter system password" aria-label="Enter system password" aria-describedby="button-addon2">			  
+			</div>			
 
       </div>
       <div class="modal-footer">
         
-		
+		<button type="submit" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncEnableAdminMode()">Enable</button>  
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
-			
+		</form>
       </div>
     </div>
   </div>
