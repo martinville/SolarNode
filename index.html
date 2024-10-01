@@ -26,7 +26,7 @@
 					<a class="navbar-brand" href="#">						
 						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.19</small></small></small></small></a>
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>						
-						<button type="button" class="btn btn-sm btn-danger" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-secondary">!</span></button>
+						
 				  </div>
 				</nav>
 				</div>			
@@ -127,8 +127,7 @@
 									<table class="table table-sm table-striped table-dark" id="idRecipeFiles" style="font-size:12px;">
 										<tbody style="font-size:12px;">			
 										<tr><td><b>#ID</td><td><b>Name</td><td><b class="float-end"></td></tr>
-										
-
+										<tr><td><div class="spinner-border text-warning" role="status"><span class="visually-hidden"></span></div></td><td></td><td></td></tr>										
 										</tbody>
 									</table>
 									<br>
@@ -148,6 +147,7 @@
 							  <span class="form-text text-light">List of files on this device.</span><br><br>
 							  <div class="card card-body bg-dark text-light">
 								<table class="table table-sm table-striped table-dark" id="idFiles" style="font-size:12px;" >
+								<tr><td><div class="spinner-border text-warning" role="status"><span class="visually-hidden"></span></div></td></tr>
 								</table>
 							  </div>							
 					  </div>
@@ -177,20 +177,26 @@
 								<div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" id="idToggleLog" onclick="FuncToggleLog()">
 									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Logging</label><br>
-									<i><small style="color:grey;">Note: Logging is meant for debugging purposes only without any log rotation functionality. If left on permanently it may fill up internal storage causing unknown effects. It's recommended to delete the log when done debugging.</small></i>
+									<i><small style="color:grey;">Note: Logging can only be turned on when the device is in admin mode and is meant for debugging purposes only without any log rotation functionality. If left on permanently it may fill up internal storage causing unknown effects. It's recommended to delete the log when done debugging.</small></i>
 								</div>
 								<br>
 								<div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
 									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Home Assistant Integration</label><br>
-									<i><small style="color:grey;">Home Asisstant configuration has to be in place for this feature to work.</small></i>
+									<i><small style="color:grey;">Home Asisstant configuration has to be configured for this feature to work.</small></i>
 								</div>
 								<br>
 	
 					  </div>
 					</div>						
 					
-
+					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
+					  <div class="card-body">																				 
+							  
+								<button type="button" class="btn btn-sm btn-light" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-danger">!</span></button>
+							  
+					  </div>
+					</div>	
 
 
 					<br><br><br>
