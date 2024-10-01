@@ -179,12 +179,7 @@
 									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Logging</label><br>
 									<i><small style="color:grey;">Note: Logging can only be turned on when the device is in admin mode and is meant for debugging purposes only without any log rotation functionality. If left on permanently it may fill up internal storage causing unknown effects. It's recommended to delete the log when done debugging.</small></i>
 								</div>
-								<br>
-								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Home Assistant Integration</label><br>
-									<i><small style="color:grey;">Home Asisstant configuration has to be configured for this feature to work.</small></i>
-								</div>
+
 								<br>
 	
 					  </div>
@@ -251,14 +246,7 @@
 				<label for="exampleInputEmail1" class="form-label">Factor Formula</label>
 				<input type="text" class="form-control" value="1" name="fFactor" id="fFactor">
 				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it 1 if you don't want to add a calculation.</div>
-			  </div>
-			<div class="input-group">
-			  <span class="input-group-text">Send to Home Assistant</span>			  
-				<select class="form-select" aria-label="Default select example">
-				  <option selected>No</option>
-				  <option value="1">Yes</option>				  				  
-				</select>
-			</div>			  
+			  </div>			  
 			
 			  
 
@@ -307,6 +295,7 @@
 			  <div class="mb-3">
 				<label class="form-label">Enable Home Assistant Integration</label>
 					<select name="fEnableHA" id="fEnableHA" class="form-select" aria-label="Default select example">
+					  <option value=""></option>
 					  <option value="Yes">Yes</option>
 					  <option value="No">No</option>
 					</select>
