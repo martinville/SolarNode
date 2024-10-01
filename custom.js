@@ -3,7 +3,6 @@ FuncGetSystemInfo();
 //FuncGetFileList();
 //FuncGetRecipes();
 FuncGetLastConStatus();
-//GetSystemSettings(); //Not used
 GetLoggingstatus();
 
 
@@ -259,9 +258,10 @@ function FuncSaveHASettings(){
 		var fHAPort=document.getElementById("fHAPort").value;
 		var fHAHTTP=document.getElementById("fHAHTTP").value;
 		var fToken=document.getElementById("fToken").value;
+		var fEnableHA=document.getElementById("fEnableHA").value;
 		
 		//Build Parameters
-		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken;
+		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken + "&fEnableHA=" + fEnableHA;
 		
 		
 		const xhr = new XMLHttpRequest();
@@ -283,32 +283,6 @@ function FuncSaveHASettings(){
 	
 }
 
-function FuncSaveSystemSettings(){
-		var fSerialPollRate=document.getElementById("fSerialPollRate").value;
-		var fEnableHAIntegration=document.getElementById("fEnableHAIntegration").value;
-		
-		//Build Parameters
-		var ParmsToSend='fSerialPollRate=' + fSerialPollRate + '&fEnableHAIntegration=' + fEnableHAIntegration;
-		
-		
-		const xhr = new XMLHttpRequest();
-		var url = "api/savesettings?" + ParmsToSend ;
-		//alert(url);
-		xhr.open("GET", url );	
-				
-		xhr.send();
-		xhr.responseType = "text";
-		xhr.onload = () => {
-		  if (xhr.readyState == 4 && xhr.status == 200) {
-			//console.log(xhr.response);
-			alert(xhr.response);						
-		  } else {
-			//console.log(`Error: ${xhr.status}`);
-			
-		  }
-		};
-	
-}
 
 
 function GetHASettings(){
@@ -331,6 +305,7 @@ function GetHASettings(){
 		document.getElementById("fHAPort").value = obj_SysInfo.HAPort;
 		document.getElementById("fHAHTTP").value = obj_SysInfo.HAHTTP;
 		document.getElementById("fToken").value = obj_SysInfo.HALongToken;
+		document.getElementById("fEnableHA").value = obj_SysInfo.HAEnabled;		
 		//alert("HA Settings Fetched");
 		}
 				
@@ -341,27 +316,7 @@ function GetHASettings(){
 	};
 }
 
-function GetSystemSettings(){
-	//{"SerialPollRate":"30","EnableHAIntegration":"No"}	
-	const xhr = new XMLHttpRequest();
-	xhr.open("GET", "systemsettings.json");
-	xhr.send();
-	xhr.responseType = "text";
-	xhr.onload = () => {
-	  if (xhr.readyState == 4 && xhr.status == 200) {
-		//console.log(xhr.response);
-		const obj_SysInfo = JSON.parse(xhr.response);
-		//alert(xhr.response);
-		document.getElementById("fSerialPollRate").innerHTML = "<option value=\"" + obj_SysInfo.SerialPollRate + "\">" + obj_SysInfo.SerialPollRate + "</option><option value=\"5\">5</option><option value=\"10\">10</option><option value=\"20\">20</option><option value=\"30\">30</option><option value=\"40\">40</option><option value=\"50\">50</option><option value=\"60\">60</option><option value=\"120\">120</option><option value=\"180\">180</option>";
-		document.getElementById("fEnableHAIntegration").innerHTML = "<option value=\"" + obj_SysInfo.EnableHAIntegration + "\">" + obj_SysInfo.EnableHAIntegration + "</option><option value=\"No\">No</option><option value=\"Yes\">Yes</option>"
-		
-				
-	  } else {
-		//console.log(`Error: ${xhr.status}`);
-		
-	  }
-	};
-}
+
 
 function FuncaskDeleteFile(FileToDelete){
 	if (confirm("Are you sure you want to delete file: /" + FileToDelete)) {

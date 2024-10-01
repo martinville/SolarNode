@@ -24,7 +24,7 @@
 				<nav class="navbar navbar-dark bg-dark text-light">
 				  <div class="container-fluid">
 					<a class="navbar-brand" href="#">						
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.19</small></small></small></small></a>
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.21</small></small></small></small></a>
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>						
 						
 				  </div>
@@ -301,11 +301,17 @@
 					</select>
 			  </div>
 			  <div class="mb-3">
-			  <div class="mb-3">
 				<label class="form-label">Home Assistant Long Live Token</label>
 				<input type="text"  name="fToken" class="form-control" id="fToken" aria-describedby="emailHelp">				
 			  </div>
-			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Enable Home Assistant Integration</label>
+					<select name="fEnableHA" id="fEnableHA" class="form-select" aria-label="Default select example">
+					  <option value="Yes">Yes</option>
+					  <option value="No">No</option>
+					</select>
+			  </div>			  
+
 			</form>			  
 			<small><small>Home assistant settings will only be shown when this device is in admin mode.</small></small>
       </div>
@@ -339,7 +345,7 @@
       </div>
       <div class="modal-footer">
         
-		<button type="submit" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncEnableAdminMode()">Enable</button>  
+		<button type="submit" class="btn btn-sm btn-dark" data-bs-dismiss="modal" onclick="FuncEnableAdminMode()">Enable</button>  
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
 		</form>
       </div>
@@ -347,48 +353,6 @@
   </div>
 </div>
 
-<!-- SystemSettings -->
-<!-- Modal -->
-<div class="modal fade" id="SystemSettings" tabindex="-1" aria-labelledby="SystemSettings" aria-hidden="true">
-  <div class="modal-dialog bg-dark">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="SystemSettings"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> System Settings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-			Serial Port Poll Rate <small>(Seconds)</small>
-			<select class="form-select" aria-label="Default select example" id="fSerialPollRate">			  
-			  <option value="5">5</option>
-			  <option value="10">10</option>
-			  <option value="20">20</option>
-			  <option value="30">30</option>
-			  <option value="40">40</option>
-			  <option value="50">50</option>
-			  <option value="60">60</option>
-			  <option value="120">120</option>
-			  <option value="180">180</option>
-			</select>
-			<br>
-			Enable Home Assistant Integration
-			<select class="form-select" aria-label="Default select example" id="fEnableHAIntegration">			  
-			  <option value="No">No</option>
-			  <option value="Yes">Yes</option>
-			</select>			
-			<br>
-			<small><small>System settings will only show if device is in admin mode.</small></small>
-
-      </div>
-      <div class="modal-footer">
-        
-		
-		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal" onclick="FuncSaveSystemSettings()">Save Settings</button>    
-		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button> 
-			
-      </div>
-    </div>
-  </div>
-</div>	
 
 <!-- Log Viewer -->
 <!-- Modal -->
