@@ -1,11 +1,11 @@
 FuncGetAdminMode();
 FuncGetSystemInfo();
-FuncGetFileList();
-FuncGetRecipes();
+//FuncGetFileList();
+//FuncGetRecipes();
 FuncGetLastConStatus();
-GetSystemSettings();
+//GetSystemSettings(); //Not used
 GetLoggingstatus();
-//FuncHideFilemanager();
+
 
 function FuncTabCtrl(SelectedTab)
 {		
@@ -25,8 +25,8 @@ function FuncTabCtrl(SelectedTab)
 	
 	if(SelectedTab=="iddeviceinfo"){document.getElementById("iddeviceinfo").classList.add('active');document.getElementById("idDeviceInfoSection").style.visibility = "visible";document.getElementById("idDeviceInfoSection").style.display = "block";}
 	if(SelectedTab=="idinverterinfo"){document.getElementById("idinverterinfo").classList.add('active');document.getElementById("idInverterInfoSection").style.visibility = "visible";document.getElementById("idInverterInfoSection").style.display = "block";}
-	if(SelectedTab=="idrecipes"){document.getElementById("idrecipes").classList.add('active');document.getElementById("idRecipeInfoSection").style.visibility = "visible";document.getElementById("idRecipeInfoSection").style.display = "block";}
-	if(SelectedTab=="idfilesysteminfo"){document.getElementById("idfilesysteminfo").classList.add('active');document.getElementById("idFileListInfoSection").style.visibility = "visible";document.getElementById("idFileListInfoSection").style.display = "block";}
+	if(SelectedTab=="idrecipes"){document.getElementById("idrecipes").classList.add('active');document.getElementById("idRecipeInfoSection").style.visibility = "visible";document.getElementById("idRecipeInfoSection").style.display = "block"; FuncGetRecipes();}
+	if(SelectedTab=="idfilesysteminfo"){document.getElementById("idfilesysteminfo").classList.add('active');document.getElementById("idFileListInfoSection").style.visibility = "visible";document.getElementById("idFileListInfoSection").style.display = "block";FuncGetFileList();}
 	if(SelectedTab=="idsystemsettings"){document.getElementById("idsystemsettings").classList.add('active');document.getElementById("idSettingsSection").style.visibility = "visible";document.getElementById("idSettingsSection").style.display = "block";}
 	
 	
@@ -36,15 +36,6 @@ function FuncTabCtrl(SelectedTab)
 	
 }
 
-function FuncShowFilemanager(){
-	FuncGetFileList();
-	document.getElementById("idFileManager").style.visibility = "visible"; 
-	document.getElementById("idFileManager").style.display = "block";	
-}
-function FuncHideFilemanager(){	
-	document.getElementById("idFileManager").style.visibility = "hidden"; 
-	document.getElementById("idFileManager").style.display = "none";	
-}
 
 function FuncGetAdminMode(){
 	const xhr = new XMLHttpRequest();
@@ -441,7 +432,7 @@ function FuncToggleLog(){
 		  if (xhr.readyState == 4 && xhr.status == 200) {
 			//console.log(xhr.response);
 			if(xhr.response=="Logging enabled"){
-				alert(xhr.response);
+				//alert(xhr.response);
 				document.getElementById("idToggleLog").checked=true;
 			}else{document.getElementById("idToggleLog").checked=false;}			
 		  }
@@ -453,7 +444,7 @@ function FuncToggleLog(){
 		xhr.responseType = "text";
 		xhr.onload = () => {
 		  if (xhr.readyState == 4 && xhr.status == 200) {
-			alert(xhr.response);
+			//alert(xhr.response);
 			if(xhr.response=="Logging disabled"){
 				
 				document.getElementById("idToggleLog").checked=false;
