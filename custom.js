@@ -4,6 +4,7 @@ FuncGetFileList();
 FuncGetRecipes();
 FuncGetLastConStatus();
 GetSystemSettings();
+GetLoggingstatus();
 //FuncHideFilemanager();
 
 function FuncTabCtrl(SelectedTab)
@@ -464,6 +465,27 @@ function FuncToggleLog(){
 
 	
 	
+}
+function GetLoggingstatus(){
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/getloggingstatus");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		//alert(xhr.response);
+		if(xhr.response=="Logging enabled"){
+			document.getElementById("idToggleLog").checked=true;
+		}else{
+			document.getElementById("idToggleLog").checked=false;
+		}
+
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
 }
 
 function FuncEnableLog(){
