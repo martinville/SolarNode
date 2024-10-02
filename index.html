@@ -224,17 +224,17 @@
 			  <div class="mb-3">
 				<label class="form-label">Unit Of Measurment</label>
 					<select class="form-select" name="fUOM" id="fUOM">
-					  <option value="">None</option>
-					  <option value="%">%</option>
-					  <option value="°C">Temperature (C)</option>					  
-					  <option value="V">Voltage (V)</option>
-					  <option value="A">Current (A)</option>
-					  <option value="W">Watts (W)</option>
-					  <option value="kWh">Killo Watt Hour (kWh)</option>
-					  <option value="Ah">Amp Hour (Ah)</option>					  
-					  <option value="Hz">Frequency Hz</option>	
-					  <option value="">Number</option>	
-					  <option value="Hz">State 1 or 0</option>	
+					  <option value="none">none</option>
+					  <option value="state">state</option>
+					  <option value="power_factor">power_factor</option>
+					  <option value="temperature">temperature</option>					  
+					  <option value="voltage">voltage</option>
+					  <option value="current">current</option>
+					  <option value="power">power</option>
+					  <option value="energy">energy</option>
+					  <option value="Amp Hour">amp hour</option>					  
+					  <option value="frequency">frequency</option>						  	
+					  <option value="time">time</option>	
 
 					</select>
 			  </div>
@@ -258,7 +258,7 @@
 
 <!-- Setup HA Config -->
 <!-- Modal -->
-<div class="modal fade" id="SetupHA" tabindex="-1" aria-labelledby="SetupHA" aria-hidden="true">
+<div class="modal modal-xl fade" id="SetupHA" tabindex="-1" aria-labelledby="SetupHA" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
@@ -266,24 +266,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-	  
-
+		
 			<form>
+			<div class="row" style="">
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Server IP Address</label>
 				<input type="text" name="fHAIP" class="form-control" id="fHAIP" aria-describedby="emailHelp">
 				<div id="emailHelp" class="form-text"><small><i>IP of your Home Assistant server.</i></small></div>				
 			  </div>
+			</div>
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Port</label>
 				<input type="text" name="fHAPort" class="form-control" id="fHAPort" value="8123">
 				<div id="emailHelp" class="form-text"><small><i>Home Asisstant TCP port number default is (8123)</i></small></div>
 			  </div>
+			</div>
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">Entity Prefix</label>
 				<input type="text" name="fHAPreFix" class="form-control" id="fHAPreFix" value="">
 				<div id="emailHelp" class="form-text"><small><i>When entities are created on Home Assistant they will be prefixed with this value. Leave blank if you dont want a prefix. Spaces are not allowed use alpha numeric characters only.</i></small></div>				
-			  </div>			  
+			  </div>
+			</div>
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">HTTP Connection Type</label>
 					<select name="fHAHTTP" id="fHAHTTP" class="form-select" aria-label="Default select example">
@@ -291,11 +298,15 @@
 					  <option value="https">https</option>
 					</select>
 			  </div>
+			</div>
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Long Live Token</label>
 				<input type="text"  name="fToken" class="form-control" id="fToken" aria-describedby="emailHelp">
 				<div id="emailHelp" class="form-text"><small><i>Generate a Home Assistant long live token and paste it here.</i></small></div>				
 			  </div>
+			</div>
+			<div class="col-sm-6" style="">
 			  <div class="mb-3">
 				<label class="form-label">Enable Home Assistant Integration</label>
 					<select name="fEnableHA" id="fEnableHA" class="form-select" aria-label="Default select example">
@@ -303,8 +314,9 @@
 					  <option value="Yes">Yes</option>
 					  <option value="No">No</option>
 					</select>
-			  </div>			  
-
+			  </div>
+			</div>
+			</div>
 			</form>			  
 			<small><small>Home assistant settings will only be shown when this device is in admin mode.</small></small>
       </div>
