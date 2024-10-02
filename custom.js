@@ -259,9 +259,10 @@ function FuncSaveHASettings(){
 		var fHAHTTP=document.getElementById("fHAHTTP").value;
 		var fToken=document.getElementById("fToken").value;
 		var fEnableHA=document.getElementById("fEnableHA").value;
+		var fHAPreFix=document.getElementById("fHAPreFix").value;
 		
 		//Build Parameters
-		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken + "&fEnableHA=" + fEnableHA;
+		var ParmsToSend='fHAIP=' + fHAIP + '&fHAPort=' + fHAPort + '&fHAHTTP=' + fHAHTTP + '&fToken=' + fToken + "&fEnableHA=" + fEnableHA + "&fHAPreFix=" + fHAPreFix;
 		
 		
 		const xhr = new XMLHttpRequest();
@@ -305,6 +306,7 @@ function GetHASettings(){
 		document.getElementById("fHAPort").value = obj_SysInfo.HAPort;
 		document.getElementById("fHAHTTP").value = obj_SysInfo.HAHTTP;
 		document.getElementById("fToken").value = obj_SysInfo.HALongToken;
+		document.getElementById("fHAPreFix").value = obj_SysInfo.HAPrefix;
 		document.getElementById("fEnableHA").value = obj_SysInfo.HAEnabled;		
 		//alert("HA Settings Fetched");
 		}

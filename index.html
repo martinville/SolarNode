@@ -182,7 +182,7 @@
 					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
 					  <div class="card-body">																				 
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.23</small></small></small></small></a>													
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.25</small></small></small></small></a>													
 						<button type="button" class="btn btn-sm btn-light float-end" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-danger">!</span></button>
 							  
 							  
@@ -271,12 +271,19 @@
 			<form>
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Server IP Address</label>
-				<input type="text" name="fHAIP" class="form-control" id="fHAIP" aria-describedby="emailHelp">				
+				<input type="text" name="fHAIP" class="form-control" id="fHAIP" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text"><small><i>IP of your Home Assistant server.</i></small></div>				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Port</label>
-				<input type="text" name="fHAPort" class="form-control" id="fHAPort" value="8123">				
+				<input type="text" name="fHAPort" class="form-control" id="fHAPort" value="8123">
+				<div id="emailHelp" class="form-text"><small><i>Home Asisstant TCP port number default is (8123)</i></small></div>
 			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Entity Prefix</label>
+				<input type="text" name="fHAPreFix" class="form-control" id="fHAPreFix" value="">
+				<div id="emailHelp" class="form-text"><small><i>When entities are created on Home Assistant they will be prefixed with this value. Leave blank if you dont want a prefix. Spaces are not allowed use alpha numeric characters only.</i></small></div>				
+			  </div>			  
 			  <div class="mb-3">
 				<label class="form-label">HTTP Connection Type</label>
 					<select name="fHAHTTP" id="fHAHTTP" class="form-select" aria-label="Default select example">
@@ -286,7 +293,8 @@
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Home Assistant Long Live Token</label>
-				<input type="text"  name="fToken" class="form-control" id="fToken" aria-describedby="emailHelp">				
+				<input type="text"  name="fToken" class="form-control" id="fToken" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text"><small><i>Generate a Home Assistant long live token and paste it here.</i></small></div>				
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Enable Home Assistant Integration</label>
