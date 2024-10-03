@@ -168,7 +168,7 @@ function FuncSaveRecipe(){
 	var fUOM = document.getElementById("fUOM").value;
 	var fFactor = document.getElementById("fFactor").value;
 	
-	var BuildURL = "api/saverecipe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
+	var BuildURL = "api/saverecipe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName.replaceAll("rcp_","") + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
 	
 	//alert(BuildURL);
 	const xhr = new XMLHttpRequest();
