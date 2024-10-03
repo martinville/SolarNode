@@ -104,7 +104,7 @@
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#CreateEndPoint">Create New Recipe</a></li>
 								<li><a class="dropdown-item" href="#" onclick="FuncGetRecipes()">Refresh Recipes</a></li>
 								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repository)</a></li>
-								<li><hr class="dropdown-divider"></li>								
+								<li><hr class="dropdown-Divide Byr"></li>								
 								<li><a class="dropdown-item" href="#" onclick="FuncExecRecipes()">Execute Recipes</a></li>
 								<li><a class="dropdown-item" href="#" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer">View Log</a></li>
 							  </ul>
@@ -157,7 +157,7 @@
 							  <ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>																
 								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repository)</a></li>
-								<li><hr class="dropdown-divider"></li>
+								<li><hr class="dropdown-Divide Byr"></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
 								<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web Interface</a></li>
 								<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
@@ -210,17 +210,27 @@
       </div>
       <div class="modal-body">
 			<form>
-			  <div class="mb-3">
+			<div class="row" style="">
+			 <div class="col-sm-3" style="">
+			 <div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Address ID</label>
 				<input type="text" class="form-control" name="fAddressID" id="fAddressID">
-				<div id="emailHelp" class="form-text">See the Synsynk MODBUS Documentation for more information on address and IDs</div>
+				<div id="emailHelp" class="form-text"><small><i>See the Synsynk MODBUS Documentation for more information on address and IDs</i></small></div>
 			  </div>
-			  <div class="mb-3">
-				<label class="form-label">Address ID Firendly Name</label>
-				<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName" onchange="FuncUpdateSystemName()" maxlength="25">
-				<label class="form-label">Address ID System Name</label>
-				<input type="text" class="form-control"  name="fAddrSystemName" id="fAddrSystemName" disabled>				
 			  </div>
+			  <div class="col-sm-3" style="">
+				  <div class="mb-3">
+					<label class="form-label">Address ID Firendly Name</label>
+					<input type="text" class="form-control" name="fAddrFriendlyName" id="fAddrFriendlyName" onchange="FuncUpdateSystemName()" maxlength="25">				
+				  </div>
+				</div>
+				<div class="col-sm-3" style="">
+				  <div class="mb-3">
+					<label class="form-label">Address ID System Name</label>
+					<input type="text" class="form-control"  name="fAddrSystemName" id="fAddrSystemName" disabled>				
+				  </div>				  
+			  </div>
+			  <div class="col-sm-3" style="">
 			  <div class="mb-3">
 				<label class="form-label">Unit Of Measurment</label>
 					<select class="form-select" name="fUOM" id="fUOM">
@@ -238,14 +248,61 @@
 
 					</select>
 			  </div>
-			  <div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Factor Formula</label>
-				<input type="text" class="form-control" value="1" name="fFactor" id="fFactor">
-				<div id="emailHelp" class="form-text">The above calculation will be applied on the retrieved value. Leave it 1 if you don't want to add a calculation.</div>
-			  </div>			  
-			
+			  </div>
+			  <div class="col-sm-12" style="">Inverter Output Modifiers</div>
+			  <div class="col-sm-3" style="">
+				<div class="input-group mb-3">
+					<select class="form-select" name="fFactor1" id="fFactor1">				
+						<option value="none">Multiply By</option>
+						<option value="none">Divide By</option>
+						<option value="none">Add</option>
+						<option value="none">Subtract</option>
+					</select>
+					<input type="text" class="form-control" placeholder="" value="1" id="fFactor1Val" name="fFactor1Val">
+			  </div>
+			  </div>
+			  <div class="col-sm-3" style="">
+				<div class="input-group mb-3">
+					<select class="form-select" name="fFactor2" id="fFactor2">				
+						<option value="none">Multiply By</option>
+						<option value="none">Divide By</option>
+						<option value="none">Add</option>
+						<option value="none">Subtract</option>
+					</select>
+					<input type="text" class="form-control" placeholder="" value="1" id="fFactor2Val" name="fFactor2Val">
+			  </div>
+			  </div>
+			  <div class="col-sm-3" style="">
+				<div class="input-group mb-3">
+					<select class="form-select" name="fFactor3" id="fFactor3">				
+						<option value="none">Multiply By</option>
+						<option value="none">Divide By</option>
+						<option value="none">Add</option>
+						<option value="none">Subtract</option>
+					</select>
+					<input type="text" class="form-control" placeholder="" value="1" id="fFactor3Val" name="fFactor3Val">
+			  </div>
+			  </div>
+			  <div class="col-sm-3" style="">
+				<div class="input-group mb-3">
+					<select class="form-select" name="fFactor4" id="fFactor4">				
+						<option value="none">Multiply By</option>
+						<option value="none">Divide By</option>
+						<option value="none">Add</option>
+						<option value="none">Subtract</option>
+					</select>
+					<input type="text" class="form-control" placeholder="" value="1" id="fFactor4Val" name="fFactor4Val">
+			  </div>
+			  </div>
+			  <div class="col-sm-12" style=""><small><i>Output from the inverter is given in number form. In some cases not usable as is and needs to be modified with a formula. You can leave default modifiers as is if you do not want to apply a formula.</i></small></div>
 			  
 
+
+
+			  
+			
+			  
+		</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    

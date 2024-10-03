@@ -166,9 +166,19 @@ function FuncSaveRecipe(){
 	var fAddrFriendlyName = document.getElementById("fAddrFriendlyName").value;
 	var fAddrSystemName = document.getElementById("fAddrSystemName").value;
 	var fUOM = document.getElementById("fUOM").value;
-	var fFactor = document.getElementById("fFactor").value;
+	var fFactor1 = document.getElementById("fFactor1").value;
+	var fFactor2 = document.getElementById("fFactor2").value;
+	var fFactor3 = document.getElementById("fFactor3").value;
+	var fFactor4 = document.getElementById("fFactor4").value;	
+	var fFactor1Val = document.getElementById("fFactor1Val").value;
+	var fFactor2Val = document.getElementById("fFactor2Val").value;
+	var fFactor3Val = document.getElementById("fFactor3Val").value;
+	var fFactor4Val = document.getElementById("fFactor4Val").value;
 	
-	var BuildURL = "api/saverecipe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor=" + fFactor;
+	
+	
+	
+	var BuildURL = "api/saverecipe?fAddressID=" + fAddressID + "&fAddrFriendlyName=" + fAddrFriendlyName + "&fAddrSystemName=" + fAddrSystemName + "&fUOM=" + fUOM + "&fFactor1=" + fFactor1 + "&fFactor2=" + fFactor2 + "&fFactor3=" + fFactor3 + "&fFactor4=" + fFactor4  + "&fFactor1Val=" + fFactor1Val  + "&fFactor2Val=" + fFactor2Val  + "&fFactor3Val=" + fFactor3Val  + "&fFactor4Val=" + fFactor4Val;
 	
 	//alert(BuildURL);
 	const xhr = new XMLHttpRequest();
