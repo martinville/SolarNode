@@ -520,6 +520,7 @@ function FuncGetLastConStatus(){
 function FuncEditRecipeFile(FileToEdit){
 //{"addrsystemname":"rcp_battery_temp","addressid":"182","addrfriendlyname":"Battery Temp","uom":"temperature","Factor1":"Subtract","Factor2":"Divide By","Factor3":"Multiply By","Factor4":"Multiply By","Factor1Val":"1000","Factor2Val":"10","Factor3Val":"1","Factor4Val":"1"}
 	document.getElementById("idEditRCP").innerHTML  = "Edit Recipe <small>" + FileToEdit + "</small>"
+	//alert(FileToEdit);
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", FileToEdit);
 	xhr.send();
