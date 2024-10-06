@@ -6,6 +6,7 @@ FuncGetLastConStatus();
 GetLoggingstatus();
 
 
+
 function FuncTabCtrl(SelectedTab)
 {		
 	document.getElementById("iddeviceinfo").classList.remove('active');
@@ -215,8 +216,10 @@ function FuncGetRecipes(){
 
 function FuncUpdateSystemName(){
 	var strFriendlyName = document.getElementById("fAddrFriendlyName").value;
+	var strAddrID = document.getElementById("fAddressID").value;
 	strFriendlyName  = strFriendlyName.replaceAll(" ","_").toLowerCase();
-	document.getElementById("fAddrSystemName").value = "rcp_" + strFriendlyName;
+	
+	document.getElementById("fAddrSystemName").value = "rcp_" + strFriendlyName + "_" +  strAddrID;
 }
 
 function FuncGetFileList(){
@@ -512,5 +515,39 @@ function FuncGetLastConStatus(){
 		
 	  }
 	};	
+}
+
+function FuncEditRecipeFile(FileToEdit){
+//{"addrsystemname":"rcp_battery_temp","addressid":"182","addrfriendlyname":"Battery Temp","uom":"temperature","Factor1":"Subtract","Factor2":"Divide By","Factor3":"Multiply By","Factor4":"Multiply By","Factor1Val":"1000","Factor2Val":"10","Factor3Val":"1","Factor4Val":"1"}
+	document.getElementById("idEditRCP").innerHTML  = "Edit Recipe <small>" + FileToEdit + "</small>"
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", FileToEdit);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		const obj_SysInfo = JSON.parse(xhr.response);		
+		//alert(xhr.response);
+		document.getElementById("fAddressID").value = obj_SysInfo.addressid;
+		document.getElementById("fAddrFriendlyName").value = obj_SysInfo.addrfriendlyname;
+		document.getElementById("fAddrSystemName").value = obj_SysInfo.addrsystemname;
+		document.getElementById("fUOM").value = obj_SysInfo.uom;
+		document.getElementById("fFactor1").value = obj_SysInfo.Factor1;
+		document.getElementById("fFactor2").value = obj_SysInfo.Factor2;
+		document.getElementById("fFactor3").value = obj_SysInfo.Factor3;
+		document.getElementById("fFactor4").value = obj_SysInfo.Factor4;
+		document.getElementById("fFactor1Val").value = obj_SysInfo.Factor1Val;
+		document.getElementById("fFactor2Val").value = obj_SysInfo.Factor2Val;
+		document.getElementById("fFactor3Val").value = obj_SysInfo.Factor3Val;
+		document.getElementById("fFactor4Val").value = obj_SysInfo.Factor4Val;			
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};
+
+
+
 }
 
