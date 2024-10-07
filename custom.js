@@ -194,6 +194,7 @@ function FuncSaveRecipe(){
 		//console.log(`Error: ${xhr.status}`);		
 	  }
 	};
+	FuncGetRecipes();
 }
 function FuncGetRecipes(){
 	const xhr = new XMLHttpRequest();
