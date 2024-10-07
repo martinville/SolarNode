@@ -186,7 +186,7 @@
 					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
 					  <div class="card-body">																				 
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.39</small></small></small></small></a>													
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.40</small></small></small></small></a>													
 						<button type="button" class="btn btn-sm btn-light float-end" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-danger">!</span></button>
 							  
 							  
@@ -218,7 +218,7 @@
 			 <div class="col-sm-3" style="">
 			 <div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Address ID</label>
-				<input type="text" class="form-control" name="fAddressID" id="fAddressID">
+				<input type="text" class="form-control" name="fAddressID" id="fAddressID" onchange="FuncUpdateSystemName()">
 				<div id="emailHelp" class="form-text"><small><i>See the Synsynk MODBUS Documentation for more information on address and IDs</i></small></div>
 			  </div>
 			  </div>
@@ -237,7 +237,7 @@
 			  <div class="col-sm-3" style="">
 			  <div class="mb-3">
 				<label class="form-label">Unit Of Measurment</label>
-					<select class="form-select" name="fUOM" id="fUOM">
+					<select class="form-select" name="fUOM" id="fUOM" onchange="FuncUpdateSystemName()">
 					  <option value="none">none</option>
 					  <option value="state">state</option>
 					  <option value="power_factor">power_factor</option>
