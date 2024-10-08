@@ -29,11 +29,11 @@
 						  <div class="mb-3 row">
 							
 							<div class="col-sm-12">
-							  <input type="password" class="form-control" id="inputPassword">
+							  <input type="password" class="form-control" id="idPassword">
 							</div>
 							
 						  </div>
-						  <button type="button" class="btn btn-sm btn-light float-end">Unlock</button>
+						  <button type="button" class="btn btn-sm btn-light float-end" onclick="FuncUnlockDevice()" >Unlock</button>
 						  <small><small><i>System is currently locked enter your admin password to unlock this device.</i></small></small>
 				  </div>
 				</div>
@@ -46,7 +46,28 @@
 
 	
 
-<script src="custom.js"></script>
+<script>
+function FuncUnlockDevice(){
+	//alert("sss");
+	var adminpass=document.getElementById("idPassword").value
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/unlockdevice?adminpass=" + adminpass);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		
+		if(xhr.response=="System Unlocked."){
+			console.log(xhr.response);
+			window.location.href = "index.html";
+		}		
+	  } else {
+		alert(xhr.response);
+		
+	  }
+	};	
+}
+</script>
 <script src="bootstrap.bundle.js"></script>
 
 
