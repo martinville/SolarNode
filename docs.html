@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SolarNODE</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+
+<link href="bootstrap.min.css" rel="stylesheet" >
+<link href="bootstrap.min.css.gz" rel="stylesheet" >
+
+<style>
+
+</style>
+
+<body style="background-color:#1B1B1F;">
+	<div class="container-sm">		
+		<div class="row">			
+			
+			<div class="col-sm-12" style="margin-top:15px;">
+			
+				<div class="card">
+				  <div class="card-header">
+					<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;">
+				  </div>
+				  <div class="card-body">
+					<h5 class="card-title text-light" style="">Modbus Address IDs and Descriptions</h5>
+					<table>
+<tr><td>0</td><td>Control  Mode</td></tr>
+<tr><td>1</td><td>MOD BUS Address</td></tr>
+<tr><td>2</td><td>Communication Protocol</td></tr>
+<tr><td>3</td><td>SN Byte 01 to 02</td></tr>
+<tr><td>4</td><td>SN Byte 03 to 04</td></tr>
+<tr><td>5</td><td>SN Byte 05 to 06</td></tr>
+<tr><td>6</td><td>SN Byte 07 to 08</td></tr>
+<tr><td>7</td><td>SN Byte 09 to 10</td></tr>
+<tr><td>8</td><td>Rated Power</td></tr>
+<tr><td>9</td><td>Not Defined</td></tr>
+<tr><td>20</td><td>Remote Lock</td></tr>
+<tr><td>21</td><td>self-check time</td></tr>
+<tr><td>22</td><td>system time  byte 01 and 02</td></tr>
+<tr><td>23</td><td>system time  byte 03 and 04</td></tr>
+<tr><td>24</td><td>system time byte 05 and 06</td></tr>
+<tr><td>25</td><td>Minimum insulation impedance</td></tr>
+<tr><td>26</td><td>Dc voltage upper limit</td></tr>
+<tr><td>27</td><td>Grid voltage Upper limit</td></tr>
+<tr><td>28</td><td>Grid voltage Lower limit</td></tr>
+<tr><td>29</td><td>Grid frequency upper limit</td></tr>
+<tr><td>30</td><td>Grid frequency lower limit</td></tr>
+<tr><td>31</td><td>grid current Upper limit</td></tr>
+<tr><td>32</td><td>Starting voltage upper limit</td></tr>
+<tr><td>33</td><td>Starting voltage  lower limit</td></tr>
+<tr><td>34</td><td>OverFrq_Derate_point</td></tr>
+<tr><td>35</td><td>OverFrq_De_rate</td></tr>
+<tr><td>36</td><td>Internal temperature upper limit</td></tr>
+<tr><td>37</td><td>Communication address</td></tr>
+<tr><td>38</td><td>Communication baud rate</td></tr>
+<tr><td>39</td><td>Power factor regulation</td></tr>
+<tr><td>40</td><td>Active power regulation</td></tr>
+<tr><td>41</td><td>Reactive power regulation</td></tr>
+<tr><td>42</td><td>Apparent power regulation</td></tr>
+<tr><td>43</td><td>Switch on and off enable</td></tr>
+<tr><td>44</td><td>Factory reset enable</td></tr>
+<tr><td>45</td><td>Self-checking time</td></tr>
+<tr><td>46</td><td>Island protection enable</td></tr>
+<tr><td>47</td><td>MPPT
+MPPT number</td></tr>
+<tr><td>48</td><td>GFDI
+GFDI enable</td></tr>
+<tr><td>49</td><td>RCD
+RCD enable</td></tr>
+<tr><td>50</td><td>RISO
+RISO enable</td></tr>
+<tr><td>51</td><td>GridStandard</td></tr>
+<tr><td>52</td><td>PV
+PV curve enable</td></tr>
+<tr><td>53</td><td>Low voltage across enable</td></tr>
+<tr><td>54</td><td>EEPROM
+EEPROM initial enabled</td></tr>
+<tr><td>55</td><td>Factory only</td></tr>
+<tr><td>56</td><td>Limter
+Limter function enable</td></tr>
+<tr><td>57</td><td>PowerWH Factor</td></tr>
+<tr><td>58</td><td>RSD
+RSD enable</td></tr>
+<tr><td>59</td><td>run  state</td></tr>
+<tr><td>60</td><td>DayActive PowerWh</td></tr>
+<tr><td>61</td><td>DayReactive PowerWh</td></tr>
+<tr><td>62</td><td>Day Grid Work Time</td></tr>
+<tr><td>63</td><td>Total_Active_PowerWh low word</td></tr>
+<tr><td>64</td><td>Total_Active_PowerWh  high word</td></tr>
+<tr><td>65</td><td>Total_Reactive_PowerWh  low word</td></tr>
+<tr><td>66</td><td>Total_Reactive_PowerWh high word</td></tr>
+<tr><td>67</td><td>Total Work time  low word</td></tr>
+<tr><td>68</td><td>Total Work time high word</td></tr>
+<tr><td>69</td><td>PVYear_PV_PowerWh high word</td></tr>
+<tr><td>70</td><td>Day_Batt_Charge _PowerWh</td></tr>
+<tr><td>71</td><td>Day_Batt_Discharge_PowerWh</td></tr>
+<tr><td>72</td><td>AC
+Grid voltage AC</td></tr>
+<tr><td>73</td><td>A
+Grid voltage A</td></tr>
+<tr><td>74</td><td>B
+Grid voltage B</td></tr>
+<tr><td>75</td><td>C
+Grid voltage C</td></tr>
+<tr><td>76</td><td>Day_GridBuy_Power Wh</td></tr>
+<tr><td>77</td><td>Day_GridSell_Power Wh</td></tr>
+<tr><td>78</td><td>Total_GridBuy_Power Wh_low word</td></tr>
+<tr><td>79</td><td>Grid frequency</td></tr>
+<tr><td>80</td><td>Total_Grid Buy_Power Wh_high word</td></tr>
+<tr><td>81</td><td>Displays high power bytes</td></tr>
+<tr><td>82</td><td>Input_active_ power_low word</td></tr>
+<tr><td>83</td><td>Input active power high word</td></tr>
+<tr><td>84</td><td>SG:Day_Load_Power Wh</td></tr>
+<tr><td>85</td><td>Total_Load_Power Wh_low word</td></tr>
+<tr><td>86</td><td>Total_Load_Power Wh_high word</td></tr>
+<tr><td>87</td><td>Year_Load_Power Wh_low word</td></tr>
+<tr><td>88</td><td>Year_Load_Power Wh_high word</td></tr>
+<tr><td>89</td><td>Output reactive power high word</td></tr>
+<tr><td>90</td><td>Radiator temperature (DCTransformer temperature)</td></tr>
+<tr><td>91</td><td>IGBT (AC)
+IGBT temperature (Radiator temperature)</td></tr>
+<tr><td>92</td><td>inductance 1 temperature (Void)</td></tr>
+<tr><td>93</td><td>power factor</td></tr>
+<tr><td>94</td><td>SD
+SD Card Status</td></tr>
+<tr><td>95</td><td>environment temperature</td></tr>
+<tr><td>96</td><td>PV
+historyPV PowerWh low word</td></tr>
+<tr><td>97</td><td>PV
+historyPV PowerWh  high word</td></tr>
+<tr><td>98</td><td>RCD leak current</td></tr>
+<tr><td>99</td><td>Limter power</td></tr>
+<tr><td>107</td><td>Corrected_AH</td></tr>
+<tr><td>108</td><td>Day PV PowerWh</td></tr>
+<tr><td>109</td><td>Dc voltage 1</td></tr>
+<tr><td>110</td><td>Dc current 1</td></tr>
+<tr><td>111</td><td>Dc voltage 2</td></tr>
+<tr><td>112</td><td>Dc current 2</td></tr>
+<tr><td>113</td><td>Dc voltage 3</td></tr>
+<tr><td>114</td><td>Dc current 3</td></tr>
+<tr><td>115</td><td>Dc voltage 4</td></tr>
+<tr><td>116</td><td>Dc current 4</td></tr>
+<tr><td>117</td><td>Un defined</td></tr>
+<tr><td>118</td><td>Un defined</td></tr>
+<tr><td>119</td><td>PV4 PV3 PV2 PV1
+Whether the damage</td></tr>
+<tr><td>120</td><td>Debug Data</td></tr>
+<tr><td>121</td><td>Debug Data</td></tr>
+<tr><td>122</td><td>Debug Data</td></tr>
+<tr><td>123</td><td>Debug Data</td></tr>
+<tr><td>150</td><td>L1-N
+Grid side voltage
+L1-N</td></tr>
+<tr><td>151</td><td>L2-N
+Grid side voltage
+L2-N</td></tr>
+<tr><td>152</td><td>L1-L2
+Grid side voltage
+L1-L2</td></tr>
+<tr><td>153</td><td>L1-L2
+Voltage at middle side of relay  L1-L2</td></tr>
+<tr><td>154</td><td>L1-N
+inverter output voltage   L1-N</td></tr>
+<tr><td>155</td><td>L2-N
+inverter output voltage  L2-N</td></tr>
+<tr><td>156</td><td>L1-L2 inverter output voltage  L1-
+L2</td></tr>
+<tr><td>157</td><td>L1
+Load voltage  L1</td></tr>
+<tr><td>158</td><td>L2
+Load voltage  L2</td></tr>
+<tr><td>160</td><td>L1
+Grid side current
+L1</td></tr>
+<tr><td>161</td><td>L2
+Grid side current
+L2</td></tr>
+<tr><td>162</td><td>LimterL1
+Grid external
+Limter current  L1</td></tr>
+<tr><td>163</td><td>LimterL2
+Grid external
+Limter current  L2</td></tr>
+<tr><td>164</td><td>L1
+Inverter output current  L1</td></tr>
+<tr><td>165</td><td>L2
+Inverter output current  L2</td></tr>
+<tr><td>166</td><td>Gen
+Gen Do micro
+inverse power input</td></tr>
+<tr><td>167</td><td>L1
+Grid side L1 power</td></tr>
+<tr><td>168</td><td>L2
+Grid side L2 power</td></tr>
+<tr><td>169</td><td>L1L2
+Total power of grid side L1L2</td></tr>
+<tr><td>170</td><td>Limter1 Grid
+external  Limter1</td></tr>
+<tr><td>171</td><td>Limter2
+Grid external
+Limter2 power</td></tr>
+<tr><td>172</td><td>Grid external Total Power</td></tr>
+<tr><td>173</td><td>L1
+inverter outputs L1 power</td></tr>
+<tr><td>174</td><td>L2
+inverter outputs L2 power</td></tr>
+<tr><td>175</td><td>inverter  output Total power</td></tr>
+<tr><td>176</td><td>L1
+Load side L1 power</td></tr>
+<tr><td>177</td><td>L2
+Load side L2 power</td></tr>
+<tr><td>178</td><td>load side Total power</td></tr>
+<tr><td>179</td><td>L1
+Load current L1</td></tr>
+<tr><td>180</td><td>L2
+Load current L2</td></tr>
+<tr><td>182</td><td>battery temperature</td></tr>
+<tr><td>183</td><td>battery voltage</td></tr>
+<tr><td>184</td><td>battery capacity</td></tr>
+<tr><td>186</td><td>PV1 input power</td></tr>
+<tr><td>187</td><td>PV2 input power</td></tr>
+<tr><td>188</td><td>PV3 input power</td></tr>
+<tr><td>189</td><td>PV4 input power</td></tr>
+<tr><td>191</td><td>Battery output current</td></tr>
+<tr><td>192</td><td>load frequency</td></tr>
+<tr><td>193</td><td>Inverter output frequency</td></tr>
+<tr><td>194</td><td>Grid side relay status</td></tr>
+<tr><td>195</td><td>Generator side relay status</td></tr>
+<tr><td>196</td><td>Unknown</td></tr>
+<tr><td>197</td><td>Unknown</td></tr>
+<tr><td>198</td><td>Input_active_ power_low word</td></tr>
+<tr><td>199</td><td>Input active power high word</td></tr>
+<tr><td>200</td><td>Day_Load_Power Wh</td></tr>
+<tr><td>201</td><td>Equalization  V</td></tr>
+<tr><td>202</td><td>Absorption  V</td></tr>
+<tr><td>203</td><td>Float  V</td></tr>
+<tr><td>204</td><td>Batt  Capacity</td></tr>
+<tr><td>205</td><td>Lithium battery capacity of LCD</td></tr>
+<tr><td>206</td><td>history_ GridSell _Power Wh_low word</td></tr>
+<tr><td>207</td><td>Equalization day cycle</td></tr>
+<tr><td>208</td><td>Equalization time</td></tr>
+<tr><td>209</td><td>TEMPCO</td></tr>
+<tr><td>210</td><td>Max A Charge</td></tr>
+<tr><td>211</td><td>Max A discharge</td></tr>
+<tr><td>212</td><td>undefined</td></tr>
+<tr><td>213</td><td>battery operates according to voltage or capacity</td></tr>
+<tr><td>214</td><td>Lithium battery wake up sign bit</td></tr>
+<tr><td>215</td><td>battery  resistance value</td></tr>
+<tr><td>216</td><td>Battery charging efficiency</td></tr>
+<tr><td>217</td><td>ShutDown
+battery capacity  ShutDown</td></tr>
+<tr><td>218</td><td>Restart
+battery capacityRestart</td></tr>
+<tr><td>219</td><td>LowBatt
+battery capacityLowBatt</td></tr>
+<tr><td>220</td><td>ShutDown
+battery voltageShutDown</td></tr>
+<tr><td>221</td><td>Restart</td></tr>
+<tr><td>222</td><td>LowBatt
+battery voltageLowBatt</td></tr>
+<tr><td>223</td><td>Maximum operating time of generator</td></tr>
+<tr><td>224</td><td>Generator cooling time</td></tr>
+<tr><td>225</td><td>Generator charging Starting voltage point</td></tr>
+<tr><td>226</td><td>Generator charging starting capacity point</td></tr>
+<tr><td>227</td><td>Generator charges the battery  current</td></tr>
+<tr><td>228</td><td>Grid charging Start voltage point o</td></tr>
+<tr><td>229</td><td>Grid  charging start capacity point</td></tr>
+<tr><td>230</td><td>Grid  charge  the battery  current</td></tr>
+<tr><td>231</td><td>Generator is charged to enable</td></tr>
+<tr><td>232</td><td>Grid  is charged to enable</td></tr>
+<tr><td>233</td><td>SolarPSU
+Solar  Input as   PSU</td></tr>
+<tr><td>234</td><td>Force on generator as load function</td></tr>
+<tr><td>235</td><td>generator input is enabled as the load output</td></tr>
+<tr><td>236</td><td>SmartLoad  OFF  batt  Voltage</td></tr>
+<tr><td>237</td><td>SmartLoad  OFF  batt</td></tr>
+<tr><td>238</td><td>SmartLoad  ON  batt
+Voltage</td></tr>
+<tr><td>239</td><td>SmartLoad  ON  batt</td></tr>
+<tr><td>240</td><td>PWM Test Enable</td></tr>
+<tr><td>241</td><td>solar minimum solar power</td></tr>
+<tr><td>242</td><td>Gen_Grid_Signal  On Energy management model</td></tr>
+<tr><td>243</td><td>Energy management model</td></tr>
+<tr><td>244</td><td>limit  control function</td></tr>
+<tr><td>245</td><td>Limit the maximum power</td></tr>
+<tr><td>246</td><td>External  current  sensor clamp  phase</td></tr>
+<tr><td>247</td><td>Solar  sell</td></tr>
+<tr><td>249</td><td>undefined</td></tr>
+<tr><td>250</td><td>Sell mode time point 1</td></tr>
+<tr><td>251</td><td>Sell mode time point 2</td></tr>
+<tr><td>252</td><td>Sell mode time point 3</td></tr>
+<tr><td>253</td><td>Sell mode time point 4</td></tr>
+<tr><td>254</td><td>Sell mode time point5</td></tr>
+<tr><td>255</td><td>Sell mode time point6</td></tr>
+<tr><td>256</td><td>Sell mode time point 1 power</td></tr>
+<tr><td>257</td><td>Sell mode time point 2 power</td></tr>
+<tr><td>258</td><td>3 Sell mode time point 3</td></tr>
+<tr><td>259</td><td>4 Sell mode time point 4</td></tr>
+<tr><td>260</td><td>5 Sell mode time point 5 power</td></tr>
+<tr><td>261</td><td>6 Sell mode time point 6
+power</td></tr>
+<tr><td>262</td><td>1 Sell mode time point 1 voltage</td></tr>
+<tr><td>263</td><td>2 Sell mode time point 2 voltage</td></tr>
+<tr><td>264</td><td>3 Sell mode time point 3 voltage</td></tr>
+<tr><td>265</td><td>4 Sell mode time point 4
+voltage</td></tr>
+<tr><td>266</td><td>5 Sell mode time point 5 voltage</td></tr>
+<tr><td>267</td><td>6 Sell mode time point 6
+voltage</td></tr>
+<tr><td>268</td><td>1 capacity</td></tr>
+<tr><td>269</td><td>2 capacity</td></tr>
+<tr><td>270</td><td>3 capacity</td></tr>
+<tr><td>271</td><td>4 capacity</td></tr>
+<tr><td>272</td><td>5 capacity</td></tr>
+<tr><td>273</td><td>6 capacity</td></tr>
+<tr><td>274</td><td>Time point 1 charge enable</td></tr>
+<tr><td>275</td><td>Time point 2 charge enable</td></tr>
+<tr><td>276</td><td>Time point 3 charge enable</td></tr>
+<tr><td>277</td><td>Time point 4 charge enable</td></tr>
+<tr><td>278</td><td>Time point 5 charge enable</td></tr>
+<tr><td>279</td><td>Time point 6 charge enable</td></tr>
+<tr><td>280</td><td>Microinverter  export  to grid  cutoff</td></tr>
+<tr><td>282</td><td>Restore connection time</td></tr>
+<tr><td>298</td><td>Low  word</td></tr>
+<tr><td>299</td><td>ARC_facTory_IARC_facTory_</td></tr>
+<tr><td>312</td><td>charging voltage</td></tr>
+<tr><td>313</td><td>discharge voltage</td></tr>
+<tr><td>314</td><td>charging current limiting</td></tr>
+<tr><td>315</td><td>Discharge current limiting</td></tr>
+<tr><td>316</td><td>real time Capacity</td></tr>
+<tr><td>317</td><td>real time voltage</td></tr>
+<tr><td>318</td><td>real time current</td></tr>
+<tr><td>319</td><td>real time temp</td></tr>
+<tr><td>320</td><td> Maximum charge current limit</td></tr>
+<tr><td>321</td><td>Maximum discharge current limiting</td></tr>
+<tr><td>322</td><td>Lithium battery alarm position</td></tr>
+<tr><td>323</td><td>Lithium battery fault location</td></tr>
+<tr><td>324</td><td>Lithium battery symbol 2</td></tr>
+<tr><td>325</td><td>Lithium battery type</td></tr>
+<tr><td>346</td><td>CA_LF2</td></tr>
+<tr><td>347</td><td>CA_HF2_Time</td></tr>
+<tr><td>348</td><td>CA_HF1_Time</td></tr>
+<tr><td>349</td><td>CA_LF1_Time</td></tr>
+<tr><td>350</td><td>CA_LF2_Time</td></tr>
+<tr><td>351</td><td>CA_QV
+California  CA_QV enable</td></tr>
+<tr><td>352</td><td>CA_QV_V1</td></tr>
+<tr><td>353</td><td>CA_QV_V2</td></tr>
+<tr><td>354</td><td>CA_QV_V3</td></tr>
+<tr><td>355</td><td>CA_QV_V4</td></tr>
+<tr><td>356</td><td>CA_QV_Q1</td></tr>
+<tr><td>357</td><td>CA_QV_Q2</td></tr>
+<tr><td>358</td><td>CA_QV_Q3</td></tr>
+<tr><td>359</td><td>CA_QV_Q4</td></tr>
+<tr><td>360</td><td>CA_FW
+California  CA_FW enable</td></tr>
+<tr><td>361</td><td>CA_Fstart</td></tr>
+<tr><td>362</td><td>CA_Fstop</td></tr>
+<tr><td>363</td><td>CA_VW
+California  CA_VW enable</td></tr>
+<tr><td>364</td><td>CA_Vstart</td></tr>
+<tr><td>365</td><td>CA_Vstop</td></tr>
+<tr><td>366</td><td>Normal upward slope</td></tr>
+<tr><td>367</td><td>Soft start rise rate</td></tr>
+<tr><td>390</td><td>Solar1Wind
+Solar1 do Wind Input can make</td></tr>
+<tr><td>391</td><td>Solar2Wind
+Solar2 do Wind Input can make</td></tr>
+<tr><td>392</td><td>Voltage      1</td></tr>
+<tr><td>393</td><td>Voltage    2</td></tr>
+<tr><td>394</td><td>Voltage    3</td></tr>
+<tr><td>395</td><td>Voltage    4</td></tr>
+<tr><td>396</td><td>Voltage    5</td></tr>
+<tr><td>397</td><td>Voltage    6</td></tr>
+<tr><td>398</td><td>Voltage    7</td></tr>
+<tr><td>399</td><td>Voltage    8</td></tr>
+<tr><td>400</td><td>Voltage    9</td></tr>
+<tr><td>401</td><td>Voltage    10</td></tr>
+<tr><td>402</td><td>Voltage    11</td></tr>
+<tr><td>403</td><td>Voltage    12</td></tr>
+<tr><td>404</td><td>Current   1</td></tr>
+<tr><td>405</td><td>Current  2</td></tr>
+<tr><td>406</td><td>Current  3</td></tr>
+<tr><td>407</td><td>Current  4</td></tr>
+<tr><td>408</td><td>Current  5</td></tr>
+<tr><td>409</td><td>Current  6</td></tr>
+<tr><td>410</td><td>Current  7</td></tr>
+<tr><td>411</td><td>Current  8</td></tr>
+<tr><td>412</td><td>Current  9</td></tr>
+<tr><td>413</td><td>Current  10</td></tr>
+<tr><td>414</td><td>Current  11</td></tr>
+<tr><td>415</td><td>Current  12</td></tr>
+<tr><td>05
+9</td><td>run  state</td></tr>
+<tr><td>060
+0</td><td>DayActive PowerWh</td></tr>
+<tr><td>061
+1</td><td>DayReactive PowerWh</td></tr>
+<tr><td>062
+2</td><td>Day Grid Work Time</td></tr>
+<tr><td>063
+3</td><td>Total_Active_PowerWh low word</td></tr>
+<tr><td>064
+4</td><td>Total_Active_PowerWh  high word</td></tr>
+<tr><td>065
+5</td><td>String</td></tr>
+<tr><td>066
+6</td><td>String</td></tr>
+<tr><td>067
+7</td><td>String</td></tr>
+<tr><td>068
+8</td><td>String</td></tr>
+<tr><td>069
+9</td><td>String</td></tr>
+<tr><td>070
+0</td><td>String</td></tr>
+<tr><td>071
+1</td><td>String</td></tr>
+<tr><td>072
+2</td><td>String</td></tr>
+<tr><td>073
+3</td><td>String</td></tr>
+<tr><td>074
+4</td><td>String inverte r</td></tr>
+<tr><td>075
+5</td><td>String</td></tr>
+<tr><td>076
+6</td><td>String</td></tr>
+<tr><td>077
+7</td><td>String</td></tr>
+<tr><td>078
+8</td><td>String inverte r</td></tr>
+<tr><td>079
+9</td><td>Grid frequency</td></tr>
+<tr><td>080
+0</td><td>String</td></tr>
+<tr><td>081
+1</td><td>String</td></tr>
+<tr><td>082</td><td>String</td></tr>
+<tr><td>083
+3</td><td>String</td></tr>
+<tr><td>084
+4</td><td>String</td></tr>
+<tr><td>085
+5</td><td>String</td></tr>
+<tr><td>086
+6</td><td>String</td></tr>
+<tr><td>087
+7</td><td>String</td></tr>
+<tr><td>088
+8</td><td>String</td></tr>
+<tr><td>089
+9</td><td>Output reactive power high word</td></tr>
+<tr><td>090
+0</td><td>(DC)
+Radiator temperature (DCTransformer temperature)</td></tr>
+<tr><td>091
+1</td><td>IGBT (AC)
+IGBT temperature (Radiator temperature)</td></tr>
+<tr><td>092
+2</td><td>1 ()
+inductance 1 temperature (Void)</td></tr>
+<tr><td>093
+3</td><td>power factor</td></tr>
+<tr><td>094
+4</td><td>SD
+SD Card Status</td></tr>
+<tr><td>095
+5</td><td>environment temperature</td></tr>
+<tr><td>096
+6</td><td>PV
+historyPV PowerWh low word</td></tr>
+<tr><td>097
+7</td><td>PV
+historyPV PowerWh  high word</td></tr>
+<tr><td>28
+3</td><td>Solar  Arc  Fault
+Solar  Arc  Fault  Mode turned on</td></tr>
+<tr><td>28
+4</td><td>Grid  Mode</td></tr>
+<tr><td>28
+5</td><td>Grid  Frequency</td></tr>
+<tr><td>28
+6</td><td>Grid  Type</td></tr>
+<tr><td>28
+7</td><td>Grid  Vol  High</td></tr>
+<tr><td>33
+1</td><td>CA_LHVRT
+California low pressure high pressure through CA_LHVRT
+enable</td></tr>
+<tr><td>33
+2</td><td>CA_HV2</td></tr>
+<tr><td>33
+3</td><td>CA_HV1</td></tr>
+<tr><td>33
+4</td><td>CA_LV1</td></tr>
+<tr><td>33
+5</td><td>CA_LV2</td></tr>
+<tr><td>33
+6</td><td>CA_LV3</td></tr>
+<tr><td>33
+7</td><td>CA_HV2_Time</td></tr>
+<tr><td>33
+8</td><td>CA_HV1_Time</td></tr>
+<tr><td>33
+9</td><td>CA_LV1_Time</td></tr>
+<tr><td>34
+0</td><td>CA_LV2_Time</td></tr>
+<tr><td>34
+1</td><td>CA_LV3_Time</td></tr>
+<tr><td>34
+2</td><td>CA_LHFRT
+California low frequency high frequency traverses CA_LHFRT enable</td></tr>
+<tr><td>34
+3</td><td>CA_HF2</td></tr>
+<tr><td>34
+4</td><td>CA_HF1</td></tr>
+<tr><td>34
+5</td><td>CA_LF1</td></tr>
+					
+					</table>
+
+				  </div>
+				</div>
+			</div>			
+		</div>
+					
+
+	</div>
+
+
+	
+
+<script>
+function FuncUnlockDevice(){
+	//alert("sss");
+	var adminpass=document.getElementById("idPassword").value
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/unlockdevice?adminpass=" + adminpass);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		
+		if(xhr.response=="System Unlocked."){
+			console.log(xhr.response);
+			window.location.href = "index.html";
+		}else{
+			alert("Incorrect Password");
+		}
+	  } else {
+		
+		
+	  }
+	};	
+}
+</script>
+<script src="bootstrap.bundle.js"></script>
+
+
+</body>
+</html>
+
+
+
