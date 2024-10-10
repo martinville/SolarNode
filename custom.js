@@ -598,8 +598,10 @@ function GetSystemSettings(){
 		const obj_SysInfo = JSON.parse(xhr.response);
 		//alert(xhr.response);
 	  	
-		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
-			alert(xhr.response);
+		if(xhr.response=="System settings cannot be retrieved. System is not in admin mode."){			
+			document.getElementById("idDeviceMode").value = "";
+			document.getElementById("idDevicePollRate").value = "";		
+			alert(xhr.response);			
 		}else{
 		document.getElementById("idDeviceMode").value = obj_SysInfo.DeviceMode;
 		document.getElementById("idDevicePollRate").value = obj_SysInfo.DevicePollRate;
