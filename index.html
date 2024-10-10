@@ -432,7 +432,7 @@
 				<div class="col-sm-12" style="">
 				  <div class="mb-3">
 					<label class="form-label">Device Mode</label>
-						<select class="form-select" aria-label="Default select example">						  
+						<select class="form-select" aria-label="Default select example" id="idDeviceMode">						  
 						  <option value="1">Sunsynk Fetch From Cloud</option>
 						  <option value="2">Direct RS232 Over Modbus Connection</option>						  
 						</select>					
@@ -440,7 +440,7 @@
 				  </div>
 				  <div class="mb-3">
 					<label class="form-label">Device Poll Rate <small>(Seconds)</small></label>
-							<input type="text" class="form-control" value="1" >				
+							<input type="text" class="form-control" value="1" id="idDevicePollRate" >				
 							<div id="emailHelp" class="form-text"><small><i>This setting will determine often this device will query either the sunsynk cloud or serial port for data.</i></small></div>				
 				  </div>				  
 				</div>

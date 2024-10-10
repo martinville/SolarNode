@@ -5,8 +5,6 @@ FuncGetSystemInfo();
 FuncGetLastConStatus();
 GetLoggingstatus();
 
-
-
 function FuncTabCtrl(SelectedTab)
 {		
 	document.getElementById("iddeviceinfo").classList.remove('active');
@@ -36,7 +34,6 @@ function FuncTabCtrl(SelectedTab)
 	
 }
 
-
 function FuncGetAdminMode(){
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/getadminmode");
@@ -60,7 +57,6 @@ function FuncGetAdminMode(){
 	  }
 	};	
 }
-
 
 function FuncDisableAdminMode(){
 	const xhr = new XMLHttpRequest();
@@ -315,8 +311,6 @@ function FuncSaveHASettings(){
 	
 }
 
-
-
 function GetHASettings(){
 	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}	
 	const xhr = new XMLHttpRequest();
@@ -348,8 +342,6 @@ function GetHASettings(){
 	  }
 	};
 }
-
-
 
 function FuncaskDeleteFile(FileToDelete){
 	if (confirm("Are you sure you want to delete file: /" + FileToDelete)) {
@@ -445,6 +437,7 @@ function FuncToggleLog(){
 	
 	
 }
+
 function GetLoggingstatus(){
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/getloggingstatus");
@@ -483,6 +476,7 @@ function FuncEnableLog(){
 	  }
 	};	
 }
+
 function FuncDisableLog(){
 	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "api/disablelog");
@@ -570,5 +564,24 @@ function FuncEditRecipeFile(FileToEdit){
 
 }
 
-
+function FuncSaveDeviceSettings(){
+	var fDeviceMode = document.getElementById("idDeviceMode").value;
+	var fDevicePollRate = document.getElementById("idDevicePollRate").value;
+	
+	var BuildURL = "api/savesettings?fDeviceMode=" + fDeviceMode + "&fDevicePollRate=" + fDevicePollRate;
+	
+	//alert(BuildURL);
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", BuildURL);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);		
+		alert(xhr.response);
+	  } else {
+		//console.log(`Error: ${xhr.status}`);		
+	  }
+	};
+}
 
