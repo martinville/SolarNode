@@ -4,6 +4,7 @@ FuncGetSystemInfo();
 //FuncGetRecipes();
 FuncGetLastConStatus();
 GetLoggingstatus();
+//GetSystemSettings();
 
 function FuncTabCtrl(SelectedTab)
 {		
@@ -581,6 +582,36 @@ function FuncSaveDeviceSettings(){
 		alert(xhr.response);
 	  } else {
 		//console.log(`Error: ${xhr.status}`);		
+	  }
+	};
+}
+
+function GetSystemSettings(){
+	//Example {"HAIP":"192.168.1.8","HAPort":"8123","HAHTTP":"http","HALongToken":"fddhdfhjf"}	
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "systemsettings.json");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		const obj_SysInfo = JSON.parse(xhr.response);
+		//alert(xhr.response);
+	  	
+		if(xhr.response=="Home Assistant settings cannot be retrieved. System is not in admin mode."){
+			alert(xhr.response);
+		}else{
+		document.getElementById("idDeviceMode").value = obj_SysInfo.DeviceMode;
+		document.getElementById("idDevicePollRate").value = obj_SysInfo.DevicePollRate;
+		alert(obj_SysInfo.DeviceMode);
+		alert(obj_SysInfo.DevicePollRate);
+	
+		//alert("HA Settings Fetched");
+		}
+				
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
 	  }
 	};
 }
