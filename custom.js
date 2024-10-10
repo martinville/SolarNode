@@ -603,8 +603,8 @@ function GetSystemSettings(){
 		}else{
 		document.getElementById("idDeviceMode").value = obj_SysInfo.DeviceMode;
 		document.getElementById("idDevicePollRate").value = obj_SysInfo.DevicePollRate;
-		alert(obj_SysInfo.DeviceMode);
-		alert(obj_SysInfo.DevicePollRate);
+		//alert(obj_SysInfo.DeviceMode);
+		//alert(obj_SysInfo.DevicePollRate);
 	
 		//alert("HA Settings Fetched");
 		}
