@@ -135,7 +135,7 @@
 							  <h4><img src="micro-sd-card.png" alt="Bootstrap" class="img-fluid" width="30px;"> File Manager</h4>								  
 							  <button type="button" class="btn btn-light btn-sm float-end" onclick="FuncGetFileList()">Refresh</button>
 							  <span class="form-text text-light">List of files on this device.</span><br>
-							  <i><small style="color:grey;">Admin mode must to be enable to be able to delete files.</small></i>
+							  <i><small style="color:grey;">Admin mode must to be enabled to be able to delete files.</small></i>
 							  <br>
 							  
 							  <div class="card card-body bg-dark text-light">
@@ -154,8 +154,9 @@
 								Configuration
 							  </button>
 							  <ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings">Device Settings</a></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>																
-								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repository)</a></li>
+								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repo)</a></li>
 								<li><hr class="dropdown-Divide Byr"></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
 								<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web Interface</a></li>
@@ -392,11 +393,11 @@
 </div>	
 <!-- SystemMaintanance -->
 <!-- Modal -->
-<div class="modal fade" id="SystemMaintanance" tabindex="-1" aria-labelledby="SetupHA" aria-hidden="true">
+<div class="modal fade" id="SystemMaintanance" tabindex="-1" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="SetupHA"><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> Enable / Disable Admin Mode</h5>
+        <h5 class="modal-title" id=""><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> Enable / Disable Admin Mode</h5>
       </div>
       <form>
 	  <div class="modal-body">
@@ -417,7 +418,44 @@
     </div>
   </div>
 </div>
+<!-- System Settings -->
+<!-- Modal -->
+<div class="modal fade" id="SystemSettings" tabindex="-1" aria-labelledby="SystemSettings" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id=""><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> Device Settings</h5>
+      </div>
+      <form>
+	  <div class="modal-body">
+			<div class="row" style="">
+				<div class="col-sm-12" style="">
+				  <div class="mb-3">
+					<label class="form-label">Device Mode</label>
+						<select class="form-select" aria-label="Default select example">						  
+						  <option value="1">Sunsynk Fetch From Cloud</option>
+						  <option value="2">Direct RS232 Over Modbus Connection</option>						  
+						</select>					
+							<div id="emailHelp" class="form-text"><small><i>Select the device mode.</i></small></div>				
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Device Poll Rate <small>(Seconds)</small></label>
+							<input type="text" class="form-control" value="1" >				
+							<div id="emailHelp" class="form-text"><small><i>This setting will determine often this device will query either the sunsynk cloud or serial port for data.</i></small></div>				
+				  </div>				  
+				</div>
+			</div>
 
+      </div>
+      <div class="modal-footer">
+        
+		<button type="submit" class="btn btn-sm btn-dark" data-bs-dismiss="modal" onclick="FuncSaveDeviceSettings()">Save</button>  
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Log Viewer -->
 <!-- Modal -->
