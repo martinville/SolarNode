@@ -155,7 +155,9 @@
 							  </button>
 							  <ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings" onclick="GetSystemSettings()">Device Settings</a></li>
-								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>																
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SunsynkSettings">Configure SunSunk Cloud</a></li>
+								
 								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repo)</a></li>
 								<li><hr class="dropdown-Divide Byr"></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
@@ -450,6 +452,48 @@
       <div class="modal-footer">
         
 		<button type="submit" class="btn btn-sm btn-dark" data-bs-dismiss="modal" onclick="FuncSaveDeviceSettings()">Save</button>  
+		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sunsynk Settings -->
+<!-- Modal -->
+<div class="modal fade" id="SunsynkSettings" tabindex="-1" aria-labelledby="SunsynkSettings" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id=""><img src="chip.png" alt="Bootstrap" class="img-fluid" width="50px;"> Device Settings</h5>
+      </div>
+      <form>
+	  <div class="modal-body">
+			<div class="row" style="">
+				<div class="col-sm-12" style="">
+				  <div class="mb-3">
+					<label class="form-label">Sunsynk Account Settings</label>														
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Email</label>
+					<input type="text" class="form-control" value="" id="idSunSynkEmail" >									
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Password</label>
+					<input type="text" class="form-control" value="" id="idSunsynkPassword" >									
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Inverter Serial Number</label>
+					<input type="text" class="form-control" value="" id="idSunSynkInverter" >				
+					<div id="emailHelp" class="form-text"><small><i>You can find the serial number by logging into the Sunsynk Portal.</i></small></div>				
+				  </div>				  
+				</div>
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        
+		<button type="submit" class="btn btn-sm btn-dark" data-bs-dismiss="modal" onclick="FuncSaveSunSynkSettings()">Save</button>  
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
 		</form>
       </div>

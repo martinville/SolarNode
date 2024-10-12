@@ -294,7 +294,7 @@ function FuncSaveHASettings(){
 		
 		
 		const xhr = new XMLHttpRequest();
-		var url = "api/savehssettings?" + ParmsToSend ;
+		var url = "api/savehasettings?" + ParmsToSend ;
 		//alert(url);
 		xhr.open("GET", url );	
 				
@@ -616,5 +616,29 @@ function GetSystemSettings(){
 		
 	  }
 	};
+}
+
+function FuncSaveSunSynkSettings(){
+	
+	var fSunSynkEmail = document.getElementById("idSunSynkEmail").value;
+	var fSunSynkPassword = document.getElementById("idSunsynkPassword").value;
+	var fSunSynkSerial = document.getElementById("idSunSynkInverter").value;
+	
+	
+	var BuildURL = "api/savesunsyncsettings?fSunSynkEmail=" + fSunSynkEmail + "&fSunSynkPassword=" + fSunSynkPassword + "&fSunSynkSerial=" + fSunSynkSerial;
+	
+	//alert(BuildURL);
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", BuildURL);
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);		
+		alert(xhr.response);
+	  } else {
+		//console.log(`Error: ${xhr.status}`);		
+	  }
+	};	
 }
 
