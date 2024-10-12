@@ -642,3 +642,37 @@ function FuncSaveSunSynkSettings(){
 	};	
 }
 
+function GetSynsynkSettings(){
+	//Example {"email":"mailmartinviljoen@gmail.com","password":"SuperStorm67890!","serial":"2302246241"}
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "sunsynksettings.json");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);
+		const obj_SysInfo = JSON.parse(xhr.response);
+		//alert(xhr.response);
+	  	
+		if(xhr.response=="SunSynk settings cannot be retrieved. System is not in admin mode."){			
+			document.getElementById("idSunSynkEmail").value = "";
+			document.getElementById("idSunsynkPassword").value = "";		
+			document.getElementById("idSunSynkInverter").value = "";	
+			alert(xhr.response);			
+		}else{
+		document.getElementById("idSunSynkEmail").value = obj_SysInfo.email;
+		document.getElementById("idSunsynkPassword").value = obj_SysInfo.password;
+		document.getElementById("idSunSynkInverter").value = obj_SysInfo.serial;
+		//alert(obj_SysInfo.DeviceMode);
+		//alert(obj_SysInfo.DevicePollRate);
+	
+		//alert("HA Settings Fetched");
+		}
+				
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};	
+}
+
