@@ -25,20 +25,19 @@
 				  </div>
 				  <div class="card-body">
 					<h5 class="card-title">Login</h5>
-						  <label >Admin Password</label>
-						  <div class="mb-3 row">
-							<form>
-							<div class="col-sm-12">
-							  <input type="password" class="form-control" id="idPassword">
-							</div>
-							
-						  </div>
-						  <button type="button" class="btn btn-sm btn-light float-end" onclick="FuncUnlockDevice()" >Unlock</button>
-						  </form>
-						  <small><small><i>System is currently locked enter your admin password to unlock this device.</i></small></small>
+					  <label >Admin Password</label>
+					  <div class="mb-3 row">
+					<form>
+						<div class="col-sm-12">
+						  <input type="password" class="form-control" id="idPassword">
+						</div>							
+					  </div>
+					  <button type="submit" class="btn btn-sm btn-light float-end" onclick="FuncUnlockDevice()" >Unlock</button>
+					</form>						  
+					  <small><small><i>System is currently locked enter your admin password to unlock this device.</i></small></small>
 				  </div>
 				</div>
-			</div>			
+			</div>
 		</div>
 					
 
@@ -58,7 +57,7 @@ function FuncUnlockDevice(){
 	xhr.onload = () => {
 	  if (xhr.readyState == 4 && xhr.status == 200) {
 		
-		if(xhr.response=="System Unlocked."){
+		if(xhr.response=="System Unlocked"){
 			console.log(xhr.response);
 			window.location.href = "index.html";
 		}else{

@@ -83,6 +83,7 @@
 									<table class="table table-sm table-striped table-dark">									
 										<tbody style="font-size:12px;">			
 										<tr><td>Serial COM</td><td id="idserialcom"><span style="color:#55B56A;">--</span></td></tr>
+										<tr><td>Sunsynk Cloud COM</td><td id="idserialcom"><span style="color:#55B56A;">--</span></td></tr>
 										</tbody>
 									</table>								
 							  </div>	
@@ -155,7 +156,7 @@
 							  </button>
 							  <ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings" onclick="GetSystemSettings()">Device Settings</a></li>
-								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA">Configure Home Assistant</a></li>
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA" onclick="GetHASettings()">Configure Home Assistant</a></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SunsynkSettings" onclick="GetSynsynkSettings()">Configure SunSunk Cloud</a></li>
 								
 								<li><a class="dropdown-item" href="#">Download Recipe Files (Github Repo)</a></li>
@@ -186,7 +187,7 @@
 					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
 					  <div class="card-body">																				 
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.45</small></small></small></small></a>													
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.47</small></small></small></small></a>													
 						<button type="button" class="btn btn-sm btn-light float-end" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-danger">!</span></button>
 							  
 							  
@@ -385,7 +386,7 @@
 	  
       <div class="modal-footer">
         
-		<button class="btn btn-sm btn-light" onclick="GetHASettings()" >Load Previously Saved Settings</button>
+		
 		<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>    
 		<button class="btn btn-sm btn-dark" onclick="FuncSaveHASettings()" data-bs-dismiss="modal" >Save</button>
 			
@@ -480,7 +481,7 @@
 				  </div>
 				  <div class="mb-3">
 					<label class="form-label">Password</label>
-					<input type="text" class="form-control" value="" id="idSunsynkPassword" >									
+					<input type="password" class="form-control" value="" id="idSunsynkPassword" >									
 				  </div>
 				  <div class="mb-3">
 					<label class="form-label">Inverter Serial Number</label>
