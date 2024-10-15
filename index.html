@@ -177,6 +177,10 @@
 									<label class="form-check-label" for="flexSwitchCheckDefault">Enable Logging</label><br>
 									<i><small style="color:grey;">Note: Logging can only be turned on when the device is in admin mode and is meant for debugging purposes only without any log rotation functionality. If left on permanently it may fill up internal storage causing unknown effects. It's recommended to delete the log when done debugging.</small></i>
 								</div>
+								<br>
+								<button type="button" class="btn btn-dark btn-sm" onclick="FuncExecRecipes()">Execute Recipes</button>
+								<button type="button" class="btn btn-dark btn-sm" onclick="ExecuteSunSynkInt()">Execute SunSynk Integration</button>
+								<a class="btn btn-dark btn-sm"  role="button" onclick="FuncLoadLog()" data-bs-toggle="modal" data-bs-target="#LogViewer" >View Log</a>
 
 								<br>
 	
