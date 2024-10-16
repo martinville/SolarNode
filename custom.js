@@ -141,6 +141,8 @@ function FuncUpdateRecipes(){
 	};
 	//document.getElementById("idAdminPassword").value="";
 }
+
+
 function FuncGetSystemInfo(){
 	//{"cputemp":50.00,"cpucount":2,"cpufreq":240,"chipcapacity":4096,"sketchcapacity":1005,"sketchfreecapacity":1280,"chipmodel":"ESP32-D0WD","macaddr":"4C11AE659D2C","serial":"4C11AE659D2C","spaceused":192,"adminmode":0,"Uptime":"1 Mins","MDNS":"SOL1","SSID":"BOB","WIFIIP":"192.168.1.147"}
 	const xhr = new XMLHttpRequest();
