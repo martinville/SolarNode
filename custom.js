@@ -117,9 +117,30 @@ function FuncUpdateSystem(){
 		
 	  }
 	};
-	document.getElementById("idAdminPassword").value="";
+	//document.getElementById("idAdminPassword").value="";
 }
 
+function FuncUpdateRecipes(){	
+	alert("System will now update in the background. You will receive a notification once the update is complete.");	
+	document.getElementById("idSystemUpdating").style.visibility = "visible";
+	document.getElementById("idSystemUpdating").style.display = "block";
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/updaterecipes");
+	xhr.send();
+	xhr.responseType = "text";
+	xhr.onload = () => {
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		//console.log(xhr.response);		
+		alert(xhr.response);
+		document.getElementById("idSystemUpdating").style.visibility = "hidden";
+		document.getElementById("idSystemUpdating").style.display = "none";
+	  } else {
+		//console.log(`Error: ${xhr.status}`);
+		
+	  }
+	};
+	//document.getElementById("idAdminPassword").value="";
+}
 function FuncGetSystemInfo(){
 	//{"cputemp":50.00,"cpucount":2,"cpufreq":240,"chipcapacity":4096,"sketchcapacity":1005,"sketchfreecapacity":1280,"chipmodel":"ESP32-D0WD","macaddr":"4C11AE659D2C","serial":"4C11AE659D2C","spaceused":192,"adminmode":0,"Uptime":"1 Mins","MDNS":"SOL1","SSID":"BOB","WIFIIP":"192.168.1.147"}
 	const xhr = new XMLHttpRequest();
