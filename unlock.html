@@ -59,7 +59,11 @@ function FuncUnlockDevice(){
 		
 		if(xhr.response=="System Unlocked"){
 			console.log(xhr.response);
-			window.location.href = "index.html";
+			var delayInMilliseconds = 1000; //1 second
+			setTimeout(function() {
+			  window.location.href = "index.html";
+			}, delayInMilliseconds);
+			
 		}else{
 			alert("Incorrect Password");
 		}
