@@ -153,18 +153,18 @@
 							  <button type="button" class="btn btn-sm btn-dark dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
 								Configuration
 							  </button>
-							  <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings" onclick="GetSystemSettings()">Device Settings</a></li>
-								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA" onclick="GetHASettings()">Configure Home Assistant</a></li>
-								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SunsynkSettings" onclick="GetSynsynkSettings()">Configure SunSunk Cloud</a></li>
+							  <ul class="dropdown-menu"> 
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemSettings" onclick="GetSystemSettings()"  id="idDeviceSettings">Device Settings</a></li>
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SetupHA" onclick="GetHASettings()" id="idHASettings">Configure Home Assistant</a></li>
+								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SunsynkSettings" onclick="GetSynsynkSettings()" id="idSunSynkSettings" >Configure SunSunk Cloud</a></li>
 								
 								
 								<li><hr class="dropdown-Divide Byr"></li>
 								<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SystemMaintanance">Enable Admin Mode</a></li>
-								<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()">Update Web Interface</a></li>
+								<li><a class="dropdown-item" href="#" onclick="FuncUpdateSystem()"  id="idUpdateWebGui">Update Web Interface</a></li>
 								<li><hr class="dropdown-Divide Byr"></li>
 								<li><a class="dropdown-item" href="#" onclick="FuncLockDevice()" >Lock Device</a></li>
-								<li><a class="dropdown-item" href="#" onclick="RebootDevice()">Reboot</a></li>
+								<li><a class="dropdown-item" href="#" onclick="RebootDevice()" id="idRebootDevbice">Reboot</a></li>
 							  </ul>
 							</div>					  
 							  
@@ -190,7 +190,7 @@
 					<div class="card bg-dark text-light" id="idDeviceInfoSection" style="visibility:visdible;display:block;">
 					  <div class="card-body">																				 
 						<div class="spinner-border text-warning" role="status" id="idSystemUpdating" style="visibility:hidden;display:none;"><span class="visually-hidden"></span></div>
-						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.50</small></small></small></small></a>													
+						<img src="logo.png" alt="Bootstrap" class="img-fluid" width="250px;"> <small><small><small><small><small>V1.51</small></small></small></small></a>													
 						<button type="button" class="btn btn-sm btn-light float-end" id="idAdminModestatus" style="visibility:visible;display:none;" onclick="FuncDisableAdminMode()" >Disable Admin Mode <span class="badge bg-danger">!</span></button>
 							  
 							  
@@ -447,7 +447,7 @@
 				  <div class="mb-3">
 					<label class="form-label">Device Poll Rate <small>(Seconds)</small></label>
 							<input type="text" class="form-control" value="1" id="idDevicePollRate" >				
-							<div id="emailHelp" class="form-text"><small><i>This setting will determine often this device will query either the sunsynk cloud or serial port for data. Set to 0 or leave blank to disable.</i></small></div>				
+							<div id="emailHelp" class="form-text"><small><i>This setting is only applicable to Direct RS232 Over Modbus Connection, in Sunsynk cloud mode it will be defaulted to 60s in the backend. </i></small></div>				
 				  </div>				  
 				</div>
 			</div>

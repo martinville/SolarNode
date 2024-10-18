@@ -47,9 +47,40 @@ function FuncGetAdminMode(){
 		if(xhr.response=="Admin mode enabled (Note: system is now vulnrable until you exit admin mode."){			
 				document.getElementById("idAdminModestatus").style.visibility = "visible"; 
 				document.getElementById("idAdminModestatus").style.display = "block";
+				
+				document.getElementById("idDeviceSettings").style.visibility = "visible"; 
+				document.getElementById("idDeviceSettings").style.display = "block";
+				
+				document.getElementById("idHASettings").style.visibility = "visible"; 
+				document.getElementById("idHASettings").style.display = "block";
+				
+				document.getElementById("idSunSynkSettings").style.visibility = "visible"; 
+				document.getElementById("idSunSynkSettings").style.display = "block";
+				
+				document.getElementById("idUpdateWebGui").style.visibility = "visible"; 
+				document.getElementById("idUpdateWebGui").style.display = "block";
+				
+				document.getElementById("idRebootDevbice").style.visibility = "visible"; 
+				document.getElementById("idRebootDevbice").style.display = "block";
+	
 		}else{			
 				document.getElementById("idAdminModestatus").style.visibility = "hidden"; 
 				document.getElementById("idAdminModestatus").style.display = "none";
+				
+				document.getElementById("idDeviceSettings").style.visibility = "hidden"; 
+				document.getElementById("idDeviceSettings").style.display = "none";
+				
+				document.getElementById("idHASettings").style.visibility = "hidden"; 
+				document.getElementById("idHASettings").style.display = "none";
+				
+				document.getElementById("idSunSynkSettings").style.visibility = "hidden"; 
+				document.getElementById("idSunSynkSettings").style.display = "none";
+				
+				document.getElementById("idUpdateWebGui").style.visibility = "hidden"; 
+				document.getElementById("idUpdateWebGui").style.display = "none";
+				
+				document.getElementById("idRebootDevbice").style.visibility = "hidden"; 
+				document.getElementById("idRebootDevbice").style.display = "none";				
 		}
 		
 	  } else {
