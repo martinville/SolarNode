@@ -679,7 +679,7 @@ function FuncSaveSunSynkSettings(){
 	var fSunSynkSerial = document.getElementById("idSunSynkInverter").value;
 	
 	
-	var BuildURL = "api/savesunsyncsettings?fSunSynkEmail=" + fSunSynkEmail + "&fSunSynkPassword=" + fSunSynkPassword + "&fSunSynkSerial=" + fSunSynkSerial;
+	var BuildURL = "api/savesunsyncsettings?fSunSynkEmail=" + encodeURIComponent(fSunSynkEmail) + "&fSunSynkPassword=" + encodeURIComponent(fSunSynkPassword) + "&fSunSynkSerial=" + encodeURIComponent(fSunSynkSerial);
 	
 	//alert(BuildURL);
 	const xhr = new XMLHttpRequest();
