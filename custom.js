@@ -675,7 +675,7 @@ function GetSystemSettings(){
 function FuncSaveSunSynkSettings(){
 	
 	var fSunSynkEmail = document.getElementById("idSunSynkEmail").value;
-	var fSunSynkPassword = document.getElementById("idSunsynkPassword").value;
+	var fSunSynkPassword = encodeURIComponent(document.getElementById("idSunsynkPassword").value);
 	var fSunSynkSerial = document.getElementById("idSunSynkInverter").value;
 	
 	
